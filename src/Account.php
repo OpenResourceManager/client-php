@@ -8,7 +8,7 @@
  */
 
 /**
- *  ORM Account Clint
+ *  ORM Account Client
  *
  * Communicates with an ORM API to preform account operations.
  *
@@ -21,15 +21,6 @@ class Account extends ORM
      * @var string
      */
     protected $route = 'accounts';
-
-    /**
-     * @param int $id
-     * @return mixed
-     */
-    public function get($id = 0)
-    {
-        return $this->_get($id)->data;
-    }
 
     /**
      * @param string $username

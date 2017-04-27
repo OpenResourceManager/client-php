@@ -20,14 +20,37 @@ use Unirest\Request\Body as UniBody;
  */
 class ORM
 {
-
+    /**
+     * @var null|string
+     */
     public $jwt = null;
+    /**
+     * @var null|string
+     */
     protected $secret = null;
+    /**
+     * @var array|null
+     */
     protected $baseURL = null;
+    /**
+     * @var null|string
+     */
     protected $authURL = null;
+    /**
+     * @var null|UniRequest
+     */
     protected $uniRequest = null;
+    /**
+     * @var null|UniBody
+     */
     protected $uniBody = null;
+    /**
+     * @var null|string
+     */
     protected $route = null;
+    /**
+     * @var array
+     */
     protected $headers = ['Accept' => 'application/json'];
 
     /**
@@ -59,7 +82,7 @@ class ORM
         $this->uniRequest = new UniRequest();
         $this->uniBody = new UniBody();
         // Authenticate with the API
-        $this->jwt = $this->authenticate();
+        $this->authenticate();
     }
 
     /**
@@ -80,7 +103,7 @@ class ORM
      * @return mixed
      * @throws Exception
      */
-    public function _get($slug)
+    public function _get($slug = '')
     {
         // Build a url from the slug that was passed in
         $url = $this->urlFromRoute($slug);
@@ -102,7 +125,7 @@ class ORM
      * @return mixed
      * @throws Exception
      */
-    public function _post($slug, $data)
+    public function _post($slug = '', $data)
     {
         // Build a url from the slug that was passed in
         $url = $this->urlFromRoute($slug);
@@ -132,6 +155,7 @@ class ORM
         if ($response->code == 200 || $response->code == 201) {
             // Grab the jwt from the response body
             $token = $response->body->token;
+            $this->jwt = $token;
             // Set the authorization header
             $this->headers['Authorization'] = implode(' ', ['Bearer', $token]);
             // Return the parsed body
@@ -140,5 +164,22 @@ class ORM
             // If we did not get 200/201 throw an exception
             throw  new Exception($response->body->message, $response->code);
         }
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function get($id = 0)
+    {
+        return $this->_get($id)->data;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMany()
+    {
+        return $this->_get();
     }
 }
