@@ -1,6 +1,6 @@
 {
     "name": "OpenResourceManager/client-php",
-    "description": "",
+    "description": "ORM client library for php.",
     "keywords": ["orm", "open resource manager", "client"],
     "license": "MIT",
     "authors": [
