@@ -4,23 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 2:33 PM
+ * Time: 4:33 PM
  */
 
 /**
- *  ORM Mobile Carrier Client
+ *  ORM Campus Client
  *
- * Communicates with an ORM API to preform mobile phone operations.
+ * Communicates with an ORM API to preform campus operations.
  *
  * @author Alex Markessinis
  */
-class MobileCarrier extends ORM
+class Campus extends ORM
 {
-
     /**
      * @var string
      */
-    protected $route = 'mobile-carriers';
+    protected $route = 'campuses';
 
     /**
      * @return mixed
@@ -47,5 +46,4 @@ class MobileCarrier extends ORM
     {
         return parent::getFromCode($code);
     }
-
 }

@@ -4,23 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 1:07 PM
+ * Time: 4:49 PM
  */
 
 /**
- *  ORM Account Client
+ *  ORM Service Account Client
  *
- * Communicates with an ORM API to preform account operations.
+ * Communicates with an ORM API to preform service account operations.
  *
  * @author Alex Markessinis
  */
-class Account extends ORM
+class ServiceAccount extends ORM
 {
-
     /**
      * @var string
      */
-    protected $route = 'accounts';
+    protected $route = 'service-accounts';
 
     /**
      * @return mixed

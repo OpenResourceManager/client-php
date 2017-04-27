@@ -167,19 +167,29 @@ class ORM
     }
 
     /**
+     * @return mixed
+     */
+    protected function getList()
+    {
+        return $this->_get()->data;
+    }
+
+    /**
      * @param int $id
      * @return mixed
      */
-    public function get($id = 0)
+    protected function get($id = 0)
     {
         return $this->_get($id)->data;
     }
 
     /**
+     * @param string $code
      * @return mixed
      */
-    public function getMany()
+    protected function getFromCode($code = '')
     {
-        return $this->_get();
+        $slug = implode('/', ['code', $code]);
+        return $this->_get($slug)->data;
     }
 }

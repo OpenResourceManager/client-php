@@ -4,23 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 2:33 PM
+ * Time: 4:37 PM
  */
 
 /**
- *  ORM Mobile Carrier Client
+ *  ORM Duty Client
  *
- * Communicates with an ORM API to preform mobile phone operations.
+ * Communicates with an ORM API to preform duty operations.
  *
  * @author Alex Markessinis
  */
-class MobileCarrier extends ORM
+class Duty extends ORM
 {
-
     /**
      * @var string
      */
-    protected $route = 'mobile-carriers';
+    protected $route = 'duties';
 
     /**
      * @return mixed
