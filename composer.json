@@ -1,5 +1,5 @@
 {
-    "name": "OpenResourceManager/client-php",
+    "name": "open-resource-manager/client-php",
     "description": "ORM client library for php.",
     "keywords": ["orm", "open resource manager", "client"],
     "license": "MIT",
