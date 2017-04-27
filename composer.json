@@ -1,0 +1,22 @@
+{
+    "name": "OpenResourceManager/client-php",
+    "description": "",
+    "keywords": ["orm", "open resource manager", "client"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Markessinis",
+            "email": "markea125@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.6",
+        "mashape/unirest-php": "^3.0"
+    },
+	"autoload": {
+        "psr-4": {
+            "OpenResourceManager\\Client\\": "src/"
+        }
+    }
+}
