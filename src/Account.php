@@ -28,7 +28,7 @@ class Account extends ORM
      */
     public function get($id = 0)
     {
-        return $this->_get($id);
+        return $this->_get($id)->data;
     }
 
     /**
@@ -38,7 +38,7 @@ class Account extends ORM
     public function getFromUsername($username = '')
     {
         $slug = implode('/', ['username', $username]);
-        return $this->_get($slug);
+        return $this->_get($slug)->data;
     }
 
     /**
@@ -47,8 +47,8 @@ class Account extends ORM
      */
     public function getFromIdentifier($identifier = '')
     {
-        $slug = implode('/', ['identifer', $identifier]);
-        return $this->_get($slug);
+        $slug = implode('/', ['identifier', $identifier]);
+        return $this->_get($slug)->data;
     }
 
 }
