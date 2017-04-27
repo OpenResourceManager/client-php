@@ -51,6 +51,8 @@ class ORM
         $this->uniBody = new UniBody();
         // Authenticate with the API
         $this->jwt = $this->authenticate();
+
+        echo $this->jwt;
     }
 
     /**
