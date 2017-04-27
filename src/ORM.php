@@ -24,6 +24,7 @@ class ORM
     public $jwt = null;
     protected $secret = null;
     protected $baseURL = null;
+    protected $authURL = null;
     protected $uniRequest = null;
     protected $uniBody = null;
     protected $route = null;
@@ -52,6 +53,8 @@ class ORM
         } else {
             $this->baseURL = [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/', $this->route, '/'];
         }
+        // Build the auth url
+        $this->authURL = implode('', [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/auth/']);
         // Create a new rest client object
         $this->uniRequest = new UniRequest();
         $this->uniBody = new UniBody();
@@ -116,20 +119,26 @@ class ORM
     }
 
     /**
-     * @return string
-     * @throws \HttpException
+     * @return mixed
+     * @throws Exception
      */
-    public function authenticate()
+    private function authenticate()
     {
         // Build the form data
         $data = $this->uniBody::Form(['secret' => $this->secret]);
         // Send a post request to the API
-        $response = $this->_post('auth', $data);
-        // Grab the jwt from the response body
-        $token = $response->token;
-        // Set the authorization header
-        $this->headers['Authorization'] = implode(' ', ['Bearer', $token]);
-        // Return the token
-        return $token;
+        $response = $this->uniRequest::post($this->authURL, $this->headers, $data);
+        // Check that we get 200 back
+        if ($response->code == 200 || $response->code == 201) {
+            // Grab the jwt from the response body
+            $token = $response->body->token;
+            // Set the authorization header
+            $this->headers['Authorization'] = implode(' ', ['Bearer', $token]);
+            // Return the parsed body
+            return $token;
+        } else {
+            // If we did not get 200/201 throw an exception
+            throw  new Exception($response->body->errors[0], $response->code);
+        }
     }
 }
