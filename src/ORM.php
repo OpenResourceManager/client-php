@@ -1,5 +1,6 @@
 <?php namespace OpenResourceManager\Client;
 
+use Exception;
 use Unirest\Request as UniRequest;
 use Unirest\Request\Body as UniBody;
 
@@ -35,7 +36,7 @@ class ORM
      * @param int $apiVersion
      * @param int $apiPort
      * @param bool $useHTTPS
-     * @throws \Exception
+     * @throws Exception
      */
     function __construct($secret = '', $apiHost = 'localhost', $apiVersion = 1, $apiPort = 8000, $useHTTPS = false)
     {
@@ -43,7 +44,7 @@ class ORM
         if (!empty($secret)) {
             $this->secret = $secret;
         } else {
-            throw new \Exception('Empty ORM API secret was supplied. Grab your secret from the ORM API console.', '800');
+            throw new Exception('Empty ORM API secret was supplied. Grab your secret from the ORM API console.', '800');
         }
         // Build and set the base API url
         if (empty($this->route)) {
@@ -74,7 +75,7 @@ class ORM
     /**
      * @param $slug
      * @return mixed
-     * @throws \HttpException
+     * @throws Exception
      */
     public function _get($slug)
     {
@@ -88,7 +89,7 @@ class ORM
             return $response->body;
         } else {
             // If we did not get 200/201 throw an exception
-            throw  new \HttpException($response->body->errors[0], $response->code);
+            throw  new Exception($response->body->errors[0], $response->code);
         }
     }
 
@@ -96,7 +97,7 @@ class ORM
      * @param $slug
      * @param $data
      * @return mixed
-     * @throws \HttpException
+     * @throws Exception
      */
     public function _post($slug, $data)
     {
@@ -110,7 +111,7 @@ class ORM
             return $response->body;
         } else {
             // If we did not get 200/201 throw an exception
-            throw  new \HttpException($response->body->errors[0], $response->code);
+            throw  new Exception($response->body->errors[0], $response->code);
         }
     }
 
