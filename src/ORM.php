@@ -92,7 +92,7 @@ class ORM
             return $response->body;
         } else {
             // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->errors[0], $response->code);
+            throw  new Exception($response->body->message, $response->code);
         }
     }
 
@@ -114,7 +114,7 @@ class ORM
             return $response->body;
         } else {
             // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->errors[0], $response->code);
+            throw  new Exception($response->body->message, $response->code);
         }
     }
 
@@ -138,7 +138,7 @@ class ORM
             return $token;
         } else {
             // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->errors[0], $response->code);
+            throw  new Exception($response->body->message, $response->code);
         }
     }
 }
