@@ -30,4 +30,13 @@ class ResourceVerification extends Client
         return $this->_get($token)->data;
     }
 
+    /**
+     * @param string $token
+     * @return mixed
+     */
+    public function postVerification($token = '')
+    {
+        return $this->_post([$token]);
+    }
+
 }
