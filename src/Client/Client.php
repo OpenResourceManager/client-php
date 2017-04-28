@@ -100,7 +100,7 @@ class Client
      */
     protected function getList()
     {
-        return $this->_get()->data;
+        return $this->_get();
     }
 
     /**
