@@ -9,7 +9,7 @@
             "email": "markea125@gmail.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
 		"php": ">=5.4",
         "mashape/unirest-php": "^3.0"
