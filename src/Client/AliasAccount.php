@@ -46,7 +46,7 @@ class AliasAccount extends Client
     public function getFromUsername($username = '')
     {
         $slug = implode('/', ['username', $username]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
 }

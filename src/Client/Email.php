@@ -46,7 +46,7 @@ class Email extends Client
     public function getByAddress($address = '')
     {
         $slug = implode('/', ['address', $address]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
     /**
@@ -56,7 +56,7 @@ class Email extends Client
     public function getForAccount($id = 0)
     {
         $slug = implode('/', ['account', $id]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
     /**
@@ -66,7 +66,7 @@ class Email extends Client
     public function getForIdentifier($identifier = '')
     {
         $slug = implode('/', ['identifier', $identifier]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
     /**
@@ -84,7 +84,7 @@ class Email extends Client
      */
     public function getVerified()
     {
-        return $this->_get('verified')->data;
+        return $this->_get('verified');
     }
 
     /**
@@ -92,7 +92,7 @@ class Email extends Client
      */
     public function getUnverified()
     {
-        return $this->_get('unverified')->data;
+        return $this->_get('unverified');
     }
 
     /**

@@ -48,7 +48,7 @@ class Account extends Client
     public function getFromUsername($username = '')
     {
         $slug = implode('/', ['username', $username]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
     /**
@@ -58,7 +58,7 @@ class Account extends Client
     public function getFromIdentifier($identifier = '')
     {
         $slug = implode('/', ['identifier', $identifier]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
 

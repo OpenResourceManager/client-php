@@ -165,7 +165,7 @@ class Client
      */
     protected function getList()
     {
-        return $this->_get()->data;
+        return $this->_get();
     }
 
     /**
@@ -174,7 +174,7 @@ class Client
      */
     protected function get($id = 0)
     {
-        return $this->_get($id)->data;
+        return $this->_get($id);
     }
 
     /**
@@ -184,7 +184,7 @@ class Client
     protected function getFromCode($code = '')
     {
         $slug = implode('/', ['code', $code]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
 }

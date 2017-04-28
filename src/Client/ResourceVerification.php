@@ -27,7 +27,7 @@ class ResourceVerification extends Client
      */
     public function getVerification($token = '')
     {
-        return $this->_get($token)->data;
+        return $this->_get($token);
     }
 
     /**
