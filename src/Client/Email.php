@@ -103,7 +103,7 @@ class Email extends Client
      * @param bool $verified
      * @return mixed
      */
-    public function postEmail($account_id, $identifier, $username, $address, $verified)
+    public function store($account_id, $identifier, $username, $address, $verified)
     {
         $fields = [];
 
@@ -128,6 +128,26 @@ class Email extends Client
         }
 
         return $this->_post($fields);
+    }
+
+    /**
+     * @param int $id
+     * @param string $address
+     * @return mixed
+     */
+    public function delete($id, $address)
+    {
+        $fields = [];
+
+        if (!empty($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!empty($address)) {
+            $fields['address'] = $address;
+        }
+
+        return $this->_del($fields);
     }
 
 }

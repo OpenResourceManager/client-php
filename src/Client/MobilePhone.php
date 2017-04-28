@@ -116,7 +116,7 @@ class MobilePhone extends Client
      * @param bool $verified
      * @return mixed
      */
-    public function postMobilePhone($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified)
+    public function store($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified)
     {
 
         $fields = [];
@@ -154,5 +154,14 @@ class MobilePhone extends Client
         }
 
         return $this->_post($fields);
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function delete($id = 0)
+    {
+        return $this->_del(['id' => $id]);
     }
 }

@@ -81,7 +81,7 @@ class Account extends Client
      * @param DateTime $birth_date
      * @return mixed
      */
-    public function postAccount($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date)
+    public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date)
     {
         $fields = [];
 
@@ -154,6 +154,31 @@ class Account extends Client
         }
 
         return $this->_post($fields);
+    }
+
+    /**
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @return mixed
+     */
+    public function delete($id, $identifier, $username)
+    {
+        $fields = [];
+
+        if (!empty($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!empty($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!empty($username)) {
+            $fields['username'] = $username;
+        }
+
+        return $this->_del($fields);
     }
 
 }
