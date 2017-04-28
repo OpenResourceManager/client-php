@@ -36,6 +36,11 @@ class Client
     protected $orm = null;
 
     /**
+     * @var array
+     */
+    protected $validCodes = [200, 201, 204];
+
+    /**
      * Client constructor.
      * @param ORM $orm
      */
@@ -74,7 +79,7 @@ class Client
         // Send a post request to the API
         $response = $this->orm->uniRequest::get($url, $this->orm->headers);
         // Check that we get 200 back
-        if ($response->code == 200 || $response->code == 201) {
+        if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
             return $response->body;
         } else {
@@ -98,7 +103,31 @@ class Client
         // Send a post request to the API
         $response = $this->orm->uniRequest::post($url, $this->orm->headers, $data);
         // Check that we get 200 back
-        if ($response->code == 200 || $response->code == 201) {
+        if (in_array($response->code, $this->validCodes)) {
+            // Return the parsed body
+            return $response->body;
+        } else {
+            // If we did not get 200/201 throw an exception
+            throw  new Exception($response->body->message, $response->code);
+        }
+    }
+
+    /**
+     * @param array $fields
+     * @param string $slug
+     * @return mixed
+     * @throws Exception
+     */
+    public function _del($fields = [], $slug = '')
+    {
+        //Build the form data
+        $data = $this->orm->uniBody::Form($fields);
+        // Build a url from the slug that was passed in
+        $url = $this->urlFromRoute($slug);
+        // Send a post request to the API
+        $response = $this->orm->uniRequest::delete($url, $this->orm->headers, $data);
+        // Check that we get 200 back
+        if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
             return $response->body;
         } else {
