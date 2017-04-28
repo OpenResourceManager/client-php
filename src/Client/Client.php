@@ -63,7 +63,7 @@ class Client
     }
 
     /**
-     * @param $slug
+     * @param string $slug
      * @return mixed
      * @throws Exception
      */
@@ -84,13 +84,15 @@ class Client
     }
 
     /**
-     * @param $slug
-     * @param $data
+     * @param array $fields
+     * @param string $slug
      * @return mixed
      * @throws Exception
      */
-    public function _post($slug = '', $data)
+    public function _post($fields = [], $slug = '')
     {
+        //Build the form data
+        $data = $this->orm->uniBody::Form($fields);
         // Build a url from the slug that was passed in
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
