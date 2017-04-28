@@ -81,7 +81,7 @@ class Client
         // Check that we get 200 back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
-            return $response->body;
+            return $response;
         } else {
             // If the token has expired
             if ($response->code == 401 && $response->body->message == 'Token has expired') {
@@ -113,7 +113,7 @@ class Client
         // Check that we get 200 back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
-            return $response->body;
+            return $response;
         } else {
             // If the token has expired
             if ($response->code == 401 && $response->body->message == 'Token has expired') {
@@ -145,7 +145,7 @@ class Client
         // Check that we get 200 back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
-            return $response->body;
+            return $response;
         } else {
             // If the token has expired
             if ($response->code == 401 && $response->body->message == 'Token has expired') {
