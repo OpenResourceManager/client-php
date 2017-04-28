@@ -104,4 +104,55 @@ class MobilePhone extends Client
         $slug = implode('/', ['mobile-carrier/code', $code]);
         return $this->_get($slug)->data;
     }
+
+    /**
+     * @param int $account_id
+     * @param string $identifier
+     * @param string $username
+     * @param string $number
+     * @param string $country_code
+     * @param int $mobile_carrier_id
+     * @param string $mobile_carrier_code
+     * @param bool $verified
+     * @return mixed
+     */
+    public function postMobilePhone($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified)
+    {
+
+        $fields = [];
+
+        if (!empty($account_id)) {
+            $fields['account_id'] = $account_id;
+        }
+
+        if (!empty($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!empty($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!empty($number)) {
+            $fields['number'] = $number;
+        }
+
+        if (!empty($country_code)) {
+            $fields['country_code'] = $country_code;
+        }
+
+        if (!empty($mobile_carrier_id)) {
+            $fields['mobile_carrier_id'] = $mobile_carrier_id;
+        }
+
+        if (!empty($mobile_carrier_code)) {
+            $fields['mobile_carrier_code'] = $mobile_carrier_code;
+        }
+
+        if (!empty($verified)) {
+            $fields['verified'] = $verified;
+        }
+
+        return $this->_post($fields);
+    }
 }

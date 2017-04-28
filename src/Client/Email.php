@@ -95,4 +95,39 @@ class Email extends Client
         return $this->_get('unverified')->data;
     }
 
+    /**
+     * @param int $account_id
+     * @param string $identifier
+     * @param string $username
+     * @param string $address
+     * @param bool $verified
+     * @return mixed
+     */
+    public function postEmail($account_id, $identifier, $username, $address, $verified)
+    {
+        $fields = [];
+
+        if (!empty($account_id)) {
+            $fields['account_id'] = $account_id;
+        }
+
+        if (!empty($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!empty($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!empty($address)) {
+            $fields['address'] = $address;
+        }
+
+        if (!empty($verified)) {
+            $fields['verified'] = $verified;
+        }
+
+        return $this->_post($fields);
+    }
+
 }

@@ -79,6 +79,7 @@ class Account extends Client
      * @param DateTime $expires_at
      * @param bool $disabled
      * @param DateTime $birth_date
+     * @return mixed
      */
     public function postAccount($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date)
     {
@@ -152,7 +153,7 @@ class Account extends Client
             $fields['birth_date'] = strftime('%F', $birth_date);
         }
 
-        $this->_post($fields);
+        return $this->_post($fields);
     }
 
 }
