@@ -17,7 +17,7 @@
 	"autoload": {
         "psr-4": {
             "OpenResourceManager\\": "src/",
-            "OpenResourceManager\\Client": "src/Client"
+            "OpenResourceManager\\Client\\": "src/Client/"
         }
     }
 }
