@@ -24,10 +24,7 @@ class ORM
      * @var null|string
      */
     public $jwt = null;
-    /**
-     * @var array|null
-     */
-    public $baseURL = null;
+
     /**
      * @var null|UniRequest
      */
@@ -68,11 +65,7 @@ class ORM
             throw new Exception('Empty ORM API secret was supplied. Grab your secret from the ORM API console.', '800');
         }
         // Build and set the base API url
-        if (empty($this->route)) {
-            $this->baseURL = [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/'];
-        } else {
-            $this->baseURL = [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/', $this->route, '/'];
-        }
+        $this->baseURL = [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/'];
         // Build the auth url
         $this->authURL = implode('', [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/auth/']);
         // Create a new rest client object

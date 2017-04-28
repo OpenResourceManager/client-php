@@ -21,6 +21,11 @@ class Client
 {
 
     /**
+     * @var array|null
+     */
+    public $baseURL = null;
+
+    /**
      * @var null|string
      */
     protected $route = null;
@@ -37,6 +42,11 @@ class Client
     function __construct(ORM $orm)
     {
         $this->orm = $orm;
+        $this->baseURL = $orm->baseURL;
+        if (!empty($this->route)) {
+            $this->baseURL[] = $this->route;
+            $this->baseURL[] = '/';
+        }
     }
 
     /**
@@ -47,7 +57,7 @@ class Client
      */
     public function urlFromRoute($path = '')
     {
-        $url = $this->orm->baseURL;
+        $url = $this->baseURL;
         $url[] = $path;
         return implode('', $url);
     }
