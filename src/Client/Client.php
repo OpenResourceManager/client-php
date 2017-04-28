@@ -83,8 +83,16 @@ class Client
             // Return the parsed body
             return $response->body;
         } else {
-            // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->message, $response->code);
+            // If the token has expired
+            if ($response->code == 401 && $response->body->message == 'Token has expired') {
+                // Authenticate again
+                $this->orm->authenticate();
+                // Try the request again
+                return $this->_get($slug);
+            } else {
+                // If we did not get 200/201/204/401 throw an exception
+                throw  new Exception($response->body->message, $response->code);
+            }
         }
     }
 
@@ -107,8 +115,16 @@ class Client
             // Return the parsed body
             return $response->body;
         } else {
-            // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->message, $response->code);
+            // If the token has expired
+            if ($response->code == 401 && $response->body->message == 'Token has expired') {
+                // Authenticate again
+                $this->orm->authenticate();
+                // Try the request again
+                return $this->_post($fields, $slug);
+            } else {
+                // If we did not get 200/201/204/401 throw an exception
+                throw  new Exception($response->body->message, $response->code);
+            }
         }
     }
 
@@ -131,8 +147,16 @@ class Client
             // Return the parsed body
             return $response->body;
         } else {
-            // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->message, $response->code);
+            // If the token has expired
+            if ($response->code == 401 && $response->body->message == 'Token has expired') {
+                // Authenticate again
+                $this->orm->authenticate();
+                // Try the request again
+                return $this->_del($fields, $slug);
+            } else {
+                // If we did not get 200/201/204/401 throw an exception
+                throw  new Exception($response->body->message, $response->code);
+            }
         }
     }
 

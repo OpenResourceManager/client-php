@@ -79,7 +79,7 @@ class ORM
      * @return mixed
      * @throws Exception
      */
-    private function authenticate()
+    public function authenticate()
     {
         // Build the form data
         $data = $this->uniBody::Form(['secret' => $this->secret]);
