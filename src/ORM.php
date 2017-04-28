@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php namespace OpenResourceManager;
 
 use Exception;
 use Unirest\Request as UniRequest;
@@ -12,9 +12,9 @@ use Unirest\Request\Body as UniBody;
  */
 
 /**
- *  ORM Client
+ *  ORM
  *
- * Communicates with an ORM API this is the base class.
+ * Base ORM class, used to set environment variables like API key and host.
  *
  * @author Alex Markessinis
  */
@@ -25,33 +25,30 @@ class ORM
      */
     public $jwt = null;
     /**
-     * @var null|string
-     */
-    protected $secret = null;
-    /**
      * @var array|null
      */
-    protected $baseURL = null;
+    public $baseURL = null;
+    /**
+     * @var null|UniRequest
+     */
+    public $uniRequest = null;
+    /**
+     * @var null|UniBody
+     */
+    public $uniBody = null;
+    /**
+     * @var array
+     */
+    public $headers = ['Accept' => 'application/json'];
     /**
      * @var null|string
      */
     protected $authURL = null;
     /**
-     * @var null|UniRequest
-     */
-    protected $uniRequest = null;
-    /**
-     * @var null|UniBody
-     */
-    protected $uniBody = null;
-    /**
      * @var null|string
      */
-    protected $route = null;
-    /**
-     * @var array
-     */
-    protected $headers = ['Accept' => 'application/json'];
+    protected $secret = null;
+
 
     /**
      * ORM constructor.
@@ -86,62 +83,6 @@ class ORM
     }
 
     /**
-     * Forms an API url from a route path
-     *
-     * @param string $path
-     * @return string
-     */
-    public function urlFromRoute($path = '')
-    {
-        $url = $this->baseURL;
-        $url[] = $path;
-        return implode('', $url);
-    }
-
-    /**
-     * @param $slug
-     * @return mixed
-     * @throws Exception
-     */
-    public function _get($slug = '')
-    {
-        // Build a url from the slug that was passed in
-        $url = $this->urlFromRoute($slug);
-        // Send a post request to the API
-        $response = $this->uniRequest::get($url, $this->headers);
-        // Check that we get 200 back
-        if ($response->code == 200 || $response->code == 201) {
-            // Return the parsed body
-            return $response->body;
-        } else {
-            // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->message, $response->code);
-        }
-    }
-
-    /**
-     * @param $slug
-     * @param $data
-     * @return mixed
-     * @throws Exception
-     */
-    public function _post($slug = '', $data)
-    {
-        // Build a url from the slug that was passed in
-        $url = $this->urlFromRoute($slug);
-        // Send a post request to the API
-        $response = $this->uniRequest::post($url, $this->headers, $data);
-        // Check that we get 200 back
-        if ($response->code == 200 || $response->code == 201) {
-            // Return the parsed body
-            return $response->body;
-        } else {
-            // If we did not get 200/201 throw an exception
-            throw  new Exception($response->body->message, $response->code);
-        }
-    }
-
-    /**
      * @return mixed
      * @throws Exception
      */
@@ -164,32 +105,5 @@ class ORM
             // If we did not get 200/201 throw an exception
             throw  new Exception($response->body->message, $response->code);
         }
-    }
-
-    /**
-     * @return mixed
-     */
-    protected function getList()
-    {
-        return $this->_get()->data;
-    }
-
-    /**
-     * @param int $id
-     * @return mixed
-     */
-    protected function get($id = 0)
-    {
-        return $this->_get($id)->data;
-    }
-
-    /**
-     * @param string $code
-     * @return mixed
-     */
-    protected function getFromCode($code = '')
-    {
-        $slug = implode('/', ['code', $code]);
-        return $this->_get($slug)->data;
     }
 }

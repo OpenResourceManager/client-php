@@ -14,7 +14,7 @@
  *
  * @author Alex Markessinis
  */
-class ResourceVerification extends ORM
+class ResourceVerification extends Client
 {
     /**
      * @var string

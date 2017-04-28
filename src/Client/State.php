@@ -4,7 +4,7 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:48 PM
+ * Time: 4:51 PM
  */
 
 /**
@@ -14,12 +14,12 @@
  *
  * @author Alex Markessinis
  */
-class Room extends ORM
+class State extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'rooms';
+    protected $route = 'states';
 
     /**
      * @return mixed
@@ -46,5 +46,4 @@ class Room extends ORM
     {
         return parent::getFromCode($code);
     }
-
 }

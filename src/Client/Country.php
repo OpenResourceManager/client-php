@@ -4,22 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:35 PM
+ * Time: 4:34 PM
  */
 
 /**
- *  ORM Course Client
+ *  ORM Country Client
  *
- * Communicates with an ORM API to preform course operations.
+ * Communicates with an ORM API to preform country operations.
  *
  * @author Alex Markessinis
  */
-class Course extends ORM
+class Country extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'course';
+    protected $route = 'countries';
 
     /**
      * @return mixed

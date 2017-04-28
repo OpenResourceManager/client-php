@@ -4,23 +4,23 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:30 PM
+ * Time: 2:33 PM
  */
 
 /**
- *  ORM Alias Account Client
+ *  ORM Mobile Carrier Client
  *
- * Communicates with an ORM API to preform alias account operations.
+ * Communicates with an ORM API to preform mobile phone operations.
  *
  * @author Alex Markessinis
  */
-class AliasAccount extends ORM
+class MobileCarrier extends Client
 {
 
     /**
      * @var string
      */
-    protected $route = 'alias-accounts';
+    protected $route = 'mobile-carriers';
 
     /**
      * @return mixed
@@ -40,13 +40,12 @@ class AliasAccount extends ORM
     }
 
     /**
-     * @param string $username
+     * @param string $code
      * @return mixed
      */
-    public function getFromUsername($username = '')
+    public function getFromCode($code = '')
     {
-        $slug = implode('/', ['username', $username]);
-        return $this->_get($slug)->data;
+        return parent::getFromCode($code);
     }
 
 }

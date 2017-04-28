@@ -4,22 +4,23 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:29 PM
+ * Time: 4:30 PM
  */
 
 /**
- *  ORM Address Client
+ *  ORM Alias Account Client
  *
- * Communicates with an ORM API to preform address operations.
+ * Communicates with an ORM API to preform alias account operations.
  *
  * @author Alex Markessinis
  */
-class Addresses extends ORM
+class AliasAccount extends Client
 {
+
     /**
      * @var string
      */
-    protected $route = 'addresses';
+    protected $route = 'alias-accounts';
 
     /**
      * @return mixed
@@ -36,6 +37,16 @@ class Addresses extends ORM
     public function get($id = 0)
     {
         return parent::get($id);
+    }
+
+    /**
+     * @param string $username
+     * @return mixed
+     */
+    public function getFromUsername($username = '')
+    {
+        $slug = implode('/', ['username', $username]);
+        return $this->_get($slug)->data;
     }
 
 }

@@ -4,22 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:32 PM
+ * Time: 4:37 PM
  */
 
 /**
- *  ORM Building Client
+ *  ORM Duty Client
  *
- * Communicates with an ORM API to preform building operations.
+ * Communicates with an ORM API to preform duty operations.
  *
  * @author Alex Markessinis
  */
-class Building extends ORM
+class Duty extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'buildings';
+    protected $route = 'duties';
 
     /**
      * @return mixed

@@ -11,12 +11,13 @@
     ],
     "type": "project",
     "require": {
-		"php": ">=5.6",
+		"php": ">=5.4",
         "mashape/unirest-php": "^3.0"
     },
 	"autoload": {
         "psr-4": {
-            "OpenResourceManager\\Client\\": "src/"
+            "OpenResourceManager\\": "src/",
+            "OpenResourceManager\\Client": "src/Client"
         }
     }
 }

@@ -4,22 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:37 PM
+ * Time: 4:36 PM
  */
 
 /**
- *  ORM Duty Client
+ *  ORM Department Client
  *
- * Communicates with an ORM API to preform duty operations.
+ * Communicates with an ORM API to preform department operations.
  *
  * @author Alex Markessinis
  */
-class Duty extends ORM
+class Department extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'duties';
+    protected $route = 'departments';
 
     /**
      * @return mixed

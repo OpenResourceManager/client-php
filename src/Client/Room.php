@@ -4,22 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:36 PM
+ * Time: 4:48 PM
  */
 
 /**
- *  ORM Department Client
+ *  ORM Room Client
  *
- * Communicates with an ORM API to preform department operations.
+ * Communicates with an ORM API to preform room operations.
  *
  * @author Alex Markessinis
  */
-class Department extends ORM
+class Room extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'departments';
+    protected $route = 'rooms';
 
     /**
      * @return mixed

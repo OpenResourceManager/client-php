@@ -8,19 +8,19 @@
  */
 
 /**
- *  ORM Mobile Phone Client
+ *  ORM Email Client
  *
- * Communicates with an ORM API to preform mobile phone operations.
+ * Communicates with an ORM API to preform email operations.
  *
  * @author Alex Markessinis
  */
-class MobilePhone extends ORM
+class Email extends Client
 {
 
     /**
      * @var string
      */
-    protected $route = 'mobile-phones';
+    protected $route = 'emails';
 
     /**
      * @return mixed
@@ -37,6 +37,16 @@ class MobilePhone extends ORM
     public function get($id = 0)
     {
         return parent::get($id);
+    }
+
+    /**
+     * @param string $address
+     * @return mixed
+     */
+    public function getByAddress($address = '')
+    {
+        $slug = implode('/', ['address', $address]);
+        return $this->_get($slug)->data;
     }
 
     /**
@@ -85,23 +95,4 @@ class MobilePhone extends ORM
         return $this->_get('unverified')->data;
     }
 
-    /**
-     * @param int $id
-     * @return mixed
-     */
-    public function getForCarrier($id = 0)
-    {
-        $slug = implode('/', ['mobile-carrier/id', $id]);
-        return $this->_get($slug)->data;
-    }
-
-    /**
-     * @param string $code
-     * @return mixed
-     */
-    public function getForCarrierCode($code = '')
-    {
-        $slug = implode('/', ['mobile-carrier/code', $code]);
-        return $this->_get($slug)->data;
-    }
 }

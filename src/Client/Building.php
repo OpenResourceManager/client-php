@@ -4,22 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:33 PM
+ * Time: 4:32 PM
  */
 
 /**
- *  ORM Campus Client
+ *  ORM Building Client
  *
- * Communicates with an ORM API to preform campus operations.
+ * Communicates with an ORM API to preform building operations.
  *
  * @author Alex Markessinis
  */
-class Campus extends ORM
+class Building extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'campuses';
+    protected $route = 'buildings';
 
     /**
      * @return mixed
@@ -46,4 +46,5 @@ class Campus extends ORM
     {
         return parent::getFromCode($code);
     }
+
 }

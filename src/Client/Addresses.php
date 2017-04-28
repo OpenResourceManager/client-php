@@ -4,22 +4,22 @@
  * Created by PhpStorm.
  * User: melon
  * Date: 4/27/17
- * Time: 4:51 PM
+ * Time: 4:29 PM
  */
 
 /**
- *  ORM Room Client
+ *  ORM Address Client
  *
- * Communicates with an ORM API to preform room operations.
+ * Communicates with an ORM API to preform address operations.
  *
  * @author Alex Markessinis
  */
-class State extends ORM
+class Addresses extends Client
 {
     /**
      * @var string
      */
-    protected $route = 'states';
+    protected $route = 'addresses';
 
     /**
      * @return mixed
@@ -38,12 +38,4 @@ class State extends ORM
         return parent::get($id);
     }
 
-    /**
-     * @param string $code
-     * @return mixed
-     */
-    public function getFromCode($code = '')
-    {
-        return parent::getFromCode($code);
-    }
 }
