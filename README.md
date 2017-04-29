@@ -12,7 +12,7 @@ composer require open-resource-manager/client-php
 
 ## Documentation
 
-https://openresourcemanager.github.io/client-php/
+https://openresourcemanager.github.io/client-php/docs/
 
 ## Usage
 
