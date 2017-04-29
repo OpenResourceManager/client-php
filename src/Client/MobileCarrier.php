@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,22 +7,34 @@
  * Time: 2:33 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Mobile Carrier Client
+ * ORM Mobile Carrier Client
  *
  * Communicates with an ORM API to preform mobile phone operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class MobileCarrier extends Client
 {
 
     /**
+     * Base Mobile Carrier Route
+     *
+     * The base API route for the mobile carrier client.
+     *
      * @var string
      */
     protected $route = 'mobile-carriers';
 
     /**
+     * Get Mobile Carrier List
+     *
+     * Gets a list of mobile carriers.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -31,6 +43,10 @@ class MobileCarrier extends Client
     }
 
     /**
+     * Get Mobile Carrier
+     *
+     * Gets a mobile carrier by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -40,6 +56,10 @@ class MobileCarrier extends Client
     }
 
     /**
+     * Get Mobile Carrier From Code
+     *
+     * Gets an mobile carrier by it's code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */

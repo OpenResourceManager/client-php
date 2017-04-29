@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,21 +7,33 @@
  * Time: 4:37 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Duty Client
+ * ORM Duty Client
  *
  * Communicates with an ORM API to preform duty operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Duty extends Client
 {
     /**
+     * Base Duty Route
+     *
+     * The base API route for the duty client.
+     *
      * @var string
      */
     protected $route = 'duties';
 
     /**
+     * Get Duty List
+     *
+     * Gets a list of duties.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -30,6 +42,10 @@ class Duty extends Client
     }
 
     /**
+     * Get Duty
+     *
+     * Gets a duty by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -39,6 +55,10 @@ class Duty extends Client
     }
 
     /**
+     * Get Duty From Code
+     *
+     * Gets a duty by it's code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */

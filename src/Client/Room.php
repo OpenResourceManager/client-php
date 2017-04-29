@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,21 +7,33 @@
  * Time: 4:48 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Room Client
+ * ORM Room Client
  *
  * Communicates with an ORM API to preform room operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Room extends Client
 {
     /**
+     * Base Room Route
+     *
+     * The base API route for the room client.
+     *
      * @var string
      */
     protected $route = 'rooms';
 
     /**
+     * Get Room List
+     *
+     * Gets a list of rooms.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -30,6 +42,10 @@ class Room extends Client
     }
 
     /**
+     * Get Room
+     *
+     * Gets a room by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -39,6 +55,10 @@ class Room extends Client
     }
 
     /**
+     * Get Room From Code
+     *
+     * Gets a room by it's code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */

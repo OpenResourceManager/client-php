@@ -1,6 +1,4 @@
-<?php namespace OpenResourceManager\Client;
-
-use DateTime;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -9,22 +7,34 @@ use DateTime;
  * Time: 1:07 PM
  */
 
+namespace OpenResourceManager\Client;
+use DateTime;
+
 /**
- *  ORM Account Client
+ * ORM Account Client
  *
  * Communicates with an ORM API to preform account operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Account extends Client
 {
-
     /**
+     * Base Account Route
+     *
+     * The base API route for the account client.
+     *
      * @var string
      */
     protected $route = 'accounts';
 
     /**
+     * Get Account List
+     *
+     * Gets a list of accounts.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -33,6 +43,10 @@ class Account extends Client
     }
 
     /**
+     * Get Account
+     *
+     * Gets an account by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -42,6 +56,10 @@ class Account extends Client
     }
 
     /**
+     * Get Account From Username
+     *
+     * Gets an account by it's username.
+     *
      * @param string $username
      * @return \Unirest\Response
      */
@@ -52,6 +70,10 @@ class Account extends Client
     }
 
     /**
+     * Get Account From Identifier
+     *
+     * Gets an account by it's identifier.
+     *
      * @param string $identifier
      * @return \Unirest\Response
      */
@@ -63,6 +85,10 @@ class Account extends Client
 
 
     /**
+     * Store Account
+     *
+     * Create or update an account, by either it's ID, identifier, or username.
+     *
      * @param string $identifier
      * @param string $username
      * @param string $name_prefix
@@ -157,6 +183,10 @@ class Account extends Client
     }
 
     /**
+     * Delete Account
+     *
+     * Delete an account by either it's ID, identifier, or username.
+     *
      * @param int $id
      * @param string $identifier
      * @param string $username
@@ -182,6 +212,10 @@ class Account extends Client
     }
 
     /**
+     * Detach Account From Duty
+     *
+     * Detach this account from a duty. Using either the account ID, identifier, or username with either the duty ID or code.
+     *
      * @param int $id
      * @param string $identifier
      * @param string $username
@@ -217,6 +251,10 @@ class Account extends Client
     }
 
     /**
+     * Attach Account To Duty
+     *
+     * Attach this account to a duty. Using either the account ID, identifier, or username with either the duty ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username
@@ -252,6 +290,10 @@ class Account extends Client
     }
 
     /**
+     * Detach Account From Course
+     *
+     * Detach this account from a course. Using either the account ID, identifier, or username with either the course ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username
@@ -287,6 +329,10 @@ class Account extends Client
     }
 
     /**
+     * Attach Account To Course
+     *
+     * Attach this account to a course. Using either the account ID, identifier, or username with either the course ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username
@@ -322,6 +368,10 @@ class Account extends Client
     }
 
     /**
+     * Detach Account From Department
+     *
+     * Detach this account from a department. Using either the account ID, identifier, or username with either the department ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username
@@ -357,6 +407,10 @@ class Account extends Client
     }
 
     /**
+     * Attach Account To Department
+     *
+     * Attach this account to a department. Using either the account ID, identifier, or username with either the department ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username
@@ -392,6 +446,10 @@ class Account extends Client
     }
 
     /**
+     * Detach Account From Room
+     *
+     * Detach this account from a room. Using either the account ID, identifier, or username with either the room ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username
@@ -427,6 +485,10 @@ class Account extends Client
     }
 
     /**
+     * Attach Account To Room
+     *
+     * Attach this account to a room. Using either the account ID, identifier, or username with either the room ID or code.
+     *
      * @param $id
      * @param $identifier
      * @param $username

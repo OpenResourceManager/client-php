@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,22 +7,34 @@
  * Time: 2:30 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Mobile Phone Client
+ * ORM Mobile Phone Client
  *
  * Communicates with an ORM API to preform mobile phone operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class MobilePhone extends Client
 {
 
     /**
+     * Base Mobile Phone Route
+     *
+     * The base API route for the mobile phone client.
+     *
      * @var string
      */
     protected $route = 'mobile-phones';
 
     /**
+     * Get Mobile Phone List
+     *
+     * Gets a list of mobile phones.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -31,6 +43,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Mobile Phone
+     *
+     * Gets a mobile phone by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -40,6 +56,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Mobile Phones Owned By Account
+     *
+     * Gets a list of mobile phones owned by an account using it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -50,6 +70,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Mobile Phones Owned By Account From Identifier
+     *
+     * Gets a list of mobile phones owned by an account using it's identifier.
+     *
      * @param string $identifier
      * @return \Unirest\Response
      */
@@ -60,6 +84,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Mobile Phones Owned By Account From Username
+     *
+     * Gets a list of mobile phones owned by an account using it's username.
+     *
      * @param string $username
      * @return \Unirest\Response
      */
@@ -70,6 +98,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Verified Mobile Phones
+     *
+     * Gets a list of mobile phones that are verified.
+     *
      * @return \Unirest\Response
      */
     public function getVerified()
@@ -78,6 +110,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Unverified Mobile Phones
+     *
+     * Gets a list of mobile phones that are unverified.
+     *
      * @return \Unirest\Response
      */
     public function getUnverified()
@@ -86,6 +122,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Mobile Phones That Belong To A Carrier
+     *
+     * Gets a list of mobile phones that belong to a mobile carrier.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -96,6 +136,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Mobile Phones That Belong To A Carrier From Code
+     *
+     * Gets a list of mobile phones that belong to a mobile carrier by the mobile carrier code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */
@@ -106,6 +150,11 @@ class MobilePhone extends Client
     }
 
     /**
+     * Create Or Update Mobile Phone
+     *
+     * Create or update a mobile phone, based the phone number.
+     * An account ID, identifier, or username can be provided to associate the mobile phone with an account.
+     *
      * @param int $account_id
      * @param string $identifier
      * @param string $username
@@ -157,6 +206,10 @@ class MobilePhone extends Client
     }
 
     /**
+     * Delete A Mobile Phone
+     *
+     * Delete a mobile phone based on it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */

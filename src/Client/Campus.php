@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,21 +7,33 @@
  * Time: 4:33 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Campus Client
+ * ORM Campus Client
  *
  * Communicates with an ORM API to preform campus operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Campus extends Client
 {
     /**
+     * Base Campus Route
+     *
+     * The base API route for the campus client.
+     *
      * @var string
      */
     protected $route = 'campuses';
 
     /**
+     * Get Campus List
+     *
+     * Gets a list of campuses.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -30,6 +42,10 @@ class Campus extends Client
     }
 
     /**
+     * Get Campus
+     *
+     * Gets a campus by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -39,6 +55,10 @@ class Campus extends Client
     }
 
     /**
+     * Get Campus From Code
+     *
+     * Gets a campus by it's code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */

@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,21 +7,33 @@
  * Time: 4:36 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Department Client
+ * ORM Department Client
  *
  * Communicates with an ORM API to preform department operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Department extends Client
 {
     /**
+     * Base Department Route
+     *
+     * The base API route for the department client.
+     *
      * @var string
      */
     protected $route = 'departments';
 
     /**
+     * Get Department List
+     *
+     * Gets a list of departments.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -30,6 +42,10 @@ class Department extends Client
     }
 
     /**
+     * Get Department
+     *
+     * Gets a department by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -39,6 +55,10 @@ class Department extends Client
     }
 
     /**
+     * Get Department From Code
+     *
+     * Gets a department by it's code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */

@@ -1,7 +1,4 @@
-<?php namespace OpenResourceManager\Client;
-
-use Exception;
-use OpenResourceManager\ORM;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -10,38 +7,59 @@ use OpenResourceManager\ORM;
  * Time: 8:48 PM
  */
 
+namespace OpenResourceManager\Client;
+use Exception;
+use OpenResourceManager\ORM;
+
 /**
- *  Client
+ * ORM Base Client
  *
- * Base ORM Client.
+ * Base client used for communicating with the API.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Client
 {
-
     /**
-     * @var array|null
+     * Base API URL
+     *
+     * Base API URL comprised of environment variables passed to the ORM constructor.
+     *
+     * @var null|array
      */
-    public $baseURL = null;
-
+    protected $baseURL = null;
     /**
+     * Base Route
+     *
+     * The base API route for the current client.
+     *
      * @var null|string
      */
     protected $route = null;
-
     /**
+     * ORM Connection
+     *
+     * The current ORM connection.
+     *
      * @var null|ORM
      */
     protected $orm = null;
-
     /**
-     * @var array
+     * Valid Response Codes
+     *
+     * Response codes that are used to determine if the api request was a success.
+     *
+     * @var null|array
      */
     protected $validCodes = null;
 
     /**
-     * Client constructor.
+     * Client Constructor
+     *
+     * Constructs a client.
+     *
      * @param ORM $orm
      */
     function __construct(ORM $orm)
@@ -56,12 +74,14 @@ class Client
     }
 
     /**
-     * Forms an API url from a route path
+     * URL From Route
+     *
+     * Forms an API url from a route path.
      *
      * @param string $path
      * @return string
      */
-    public function urlFromRoute($path = '')
+    protected function urlFromRoute($path = '')
     {
         $url = $this->baseURL;
         $url[] = $path;
@@ -69,16 +89,20 @@ class Client
     }
 
     /**
+     * _Get
+     *
+     * Performs a get request to a specified url slug.
+     *
      * @param string $slug
      * @return \Unirest\Response
      * @throws Exception
      */
-    public function _get($slug = '')
+    protected function _get($slug = '')
     {
         // Build a url from the slug that was passed in
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
-        $response = $this->orm->uniRequest::get($url, $this->orm->headers);
+        $response = $this->orm->uniRequest->get($url, $this->orm->headers);
         // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
@@ -98,19 +122,23 @@ class Client
     }
 
     /**
+     * _Post
+     *
+     * Performs a post request to a specified url slug.
+     *
      * @param array $fields
      * @param string $slug
      * @return \Unirest\Response
      * @throws Exception
      */
-    public function _post($fields = [], $slug = '')
+    protected function _post($fields = [], $slug = '')
     {
         //Build the form data
-        $data = $this->orm->uniBody::Form($fields);
+        $data = $this->orm->uniBody->Form($fields);
         // Build a url from the slug that was passed in
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
-        $response = $this->orm->uniRequest::post($url, $this->orm->headers, $data);
+        $response = $this->orm->uniRequest->post($url, $this->orm->headers, $data);
         // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
@@ -130,19 +158,23 @@ class Client
     }
 
     /**
+     * _Del
+     *
+     * Performs a delete request to a specified url slug.
+     *
      * @param array $fields
      * @param string $slug
      * @return \Unirest\Response
      * @throws Exception
      */
-    public function _del($fields = [], $slug = '')
+    protected function _del($fields = [], $slug = '')
     {
         //Build the form data
-        $data = $this->orm->uniBody::Form($fields);
+        $data = $this->orm->uniBody->Form($fields);
         // Build a url from the slug that was passed in
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
-        $response = $this->orm->uniRequest::delete($url, $this->orm->headers, $data);
+        $response = $this->orm->uniRequest->delete($url, $this->orm->headers, $data);
         // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
@@ -162,6 +194,10 @@ class Client
     }
 
     /**
+     * Get List
+     *
+     * Gets a list of objects.
+     *
      * @return \Unirest\Response
      */
     protected function getList()
@@ -170,6 +206,10 @@ class Client
     }
 
     /**
+     * Get
+     *
+     * Gets an object by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -179,6 +219,10 @@ class Client
     }
 
     /**
+     * Get From Code
+     *
+     * Gets an object by it's Code.
+     *
      * @param string $code
      * @return \Unirest\Response
      */

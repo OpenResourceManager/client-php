@@ -1,4 +1,4 @@
-<?php namespace OpenResourceManager\Client;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -7,22 +7,34 @@
  * Time: 2:30 PM
  */
 
+namespace OpenResourceManager\Client;
+
 /**
- *  ORM Email Client
+ * ORM Email Client
  *
  * Communicates with an ORM API to preform email operations.
  *
+ * @license MIT
+ * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
 class Email extends Client
 {
 
     /**
+     * Base Email Route
+     *
+     * The base API route for the email client.
+     *
      * @var string
      */
     protected $route = 'emails';
 
     /**
+     * Get Email List
+     *
+     * Gets a list of emails.
+     *
      * @return \Unirest\Response
      */
     public function getList()
@@ -31,6 +43,10 @@ class Email extends Client
     }
 
     /**
+     * Get Email
+     *
+     * Gets an email by it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -40,6 +56,10 @@ class Email extends Client
     }
 
     /**
+     * Get Email From Address
+     *
+     * Gets an email by it's address.
+     *
      * @param string $address
      * @return \Unirest\Response
      */
@@ -50,6 +70,10 @@ class Email extends Client
     }
 
     /**
+     * Get Emails Owned By Account
+     *
+     * Get a list of emails owned by an account by supplying it's ID.
+     *
      * @param int $id
      * @return \Unirest\Response
      */
@@ -60,6 +84,10 @@ class Email extends Client
     }
 
     /**
+     * Get Emails Owned By Account From Identifier
+     *
+     * Get a list of emails owned by an account by supplying it's identifier.
+     *
      * @param string $identifier
      * @return \Unirest\Response
      */
@@ -70,6 +98,10 @@ class Email extends Client
     }
 
     /**
+     * Get Emails Owned By Account From Username
+     *
+     * Get a list of emails owned by an account by supplying it's username.
+     *
      * @param string $username
      * @return \Unirest\Response
      */
@@ -80,6 +112,10 @@ class Email extends Client
     }
 
     /**
+     * Get Emails That Are Verified
+     *
+     * Get a list of emails that are verified.
+     *
      * @return \Unirest\Response
      */
     public function getVerified()
@@ -88,6 +124,10 @@ class Email extends Client
     }
 
     /**
+     * Get Emails That Are Unverified
+     *
+     * Get a list of emails that are unverified.
+     *
      * @return \Unirest\Response
      */
     public function getUnverified()
@@ -96,6 +136,10 @@ class Email extends Client
     }
 
     /**
+     * Create An Email
+     *
+     * Create an email by supplying either an account_id, identifier, or username.
+     *
      * @param int $account_id
      * @param string $identifier
      * @param string $username
@@ -131,6 +175,10 @@ class Email extends Client
     }
 
     /**
+     * Delete An Email
+     *
+     * Delete an email by supplying an ID or address.
+     *
      * @param int $id
      * @param string $address
      * @return \Unirest\Response
