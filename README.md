@@ -10,6 +10,10 @@ ORM client library for php.
 composer require open-resource-manager/client-php
 ```
 
+## Documentation
+
+https://openresourcemanager.github.io/client-php/
+
 ## Usage
 
 ```php
