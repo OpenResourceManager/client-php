@@ -121,35 +121,35 @@ class MobilePhone extends Client
 
         $fields = [];
 
-        if (!empty($account_id)) {
+        if (!is_null($account_id)) {
             $fields['account_id'] = $account_id;
         }
 
-        if (!empty($identifier)) {
+        if (!is_null($identifier)) {
             $fields['identifier'] = $identifier;
         }
 
-        if (!empty($username)) {
+        if (!is_null($username)) {
             $fields['username'] = $username;
         }
 
-        if (!empty($number)) {
+        if (!is_null($number)) {
             $fields['number'] = $number;
         }
 
-        if (!empty($country_code)) {
+        if (!is_null($country_code)) {
             $fields['country_code'] = $country_code;
         }
 
-        if (!empty($mobile_carrier_id)) {
+        if (!is_null($mobile_carrier_id)) {
             $fields['mobile_carrier_id'] = $mobile_carrier_id;
         }
 
-        if (!empty($mobile_carrier_code)) {
+        if (!is_null($mobile_carrier_code)) {
             $fields['mobile_carrier_code'] = $mobile_carrier_code;
         }
 
-        if (!empty($verified)) {
+        if (!is_null($verified)) {
             $fields['verified'] = $verified;
         }
 

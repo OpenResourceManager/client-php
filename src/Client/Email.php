@@ -107,23 +107,23 @@ class Email extends Client
     {
         $fields = [];
 
-        if (!empty($account_id)) {
+        if (!is_null($account_id)) {
             $fields['account_id'] = $account_id;
         }
 
-        if (!empty($identifier)) {
+        if (!is_null($identifier)) {
             $fields['identifier'] = $identifier;
         }
 
-        if (!empty($username)) {
+        if (!is_null($username)) {
             $fields['username'] = $username;
         }
 
-        if (!empty($address)) {
+        if (!is_null($address)) {
             $fields['address'] = $address;
         }
 
-        if (!empty($verified)) {
+        if (!is_null($verified)) {
             $fields['verified'] = $verified;
         }
 
@@ -139,11 +139,11 @@ class Email extends Client
     {
         $fields = [];
 
-        if (!empty($id)) {
+        if (!is_null($id)) {
             $fields['id'] = $id;
         }
 
-        if (!empty($address)) {
+        if (!is_null($address)) {
             $fields['address'] = $address;
         }
 

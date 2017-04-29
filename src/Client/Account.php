@@ -85,71 +85,71 @@ class Account extends Client
     {
         $fields = [];
 
-        if (!empty($identifier)) {
+        if (!is_null($identifier)) {
             $fields['identifier'] = $identifier;
         }
 
-        if (!empty($username)) {
+        if (!is_null($username)) {
             $fields['username'] = $username;
         }
 
-        if (!empty($name_prefix)) {
+        if (!is_null($name_prefix)) {
             $fields['name_prefix'] = $name_prefix;
         }
 
-        if (!empty($name_first)) {
+        if (!is_null($name_first)) {
             $fields['name_first'] = $name_first;
         }
 
-        if (!empty($name_middle)) {
+        if (!is_null($name_middle)) {
             $fields['name_middle'] = $name_middle;
         }
 
-        if (!empty($name_middle)) {
+        if (!is_null($name_middle)) {
             $fields['name_middle'] = $name_middle;
         }
 
-        if (!empty($name_last)) {
+        if (!is_null($name_last)) {
             $fields['name_last'] = $name_last;
         }
 
-        if (!empty($name_postifx)) {
+        if (!is_null($name_postifx)) {
             $fields['name_postifx'] = $name_postifx;
         }
 
-        if (!empty($name_phonetic)) {
+        if (!is_null($name_phonetic)) {
             $fields['name_phonetic'] = $name_phonetic;
         }
 
-        if (!empty($primary_duty_id)) {
+        if (!is_null($primary_duty_id)) {
             $fields['primary_duty_id'] = $primary_duty_id;
         }
 
-        if (!empty($primary_duty_code)) {
+        if (!is_null($primary_duty_code)) {
             $fields['primary_duty_code'] = $primary_duty_code;
         }
 
-        if (!empty($ssn)) {
+        if (!is_null($ssn)) {
             $fields['ssn'] = $ssn;
         }
 
-        if (!empty($should_propagate_password)) {
+        if (!is_null($should_propagate_password)) {
             $fields['should_propagate_password'] = $should_propagate_password;
         }
 
-        if (!empty($password)) {
+        if (!is_null($password)) {
             $fields['password'] = $password;
         }
 
-        if (!empty($expires_at)) {
+        if (!is_null($expires_at)) {
             $fields['expires_at'] = strftime('%F %R', $expires_at);
         }
 
-        if (!empty($disabled)) {
+        if (!is_null($disabled)) {
             $fields['disabled'] = $disabled;
         }
 
-        if (!empty($birth_date)) {
+        if (!is_null($birth_date)) {
             $fields['birth_date'] = strftime('%F', $birth_date);
         }
 
@@ -166,15 +166,15 @@ class Account extends Client
     {
         $fields = [];
 
-        if (!empty($id)) {
+        if (!is_null($id)) {
             $fields['id'] = $id;
         }
 
-        if (!empty($identifier)) {
+        if (!is_null($identifier)) {
             $fields['identifier'] = $identifier;
         }
 
-        if (!empty($username)) {
+        if (!is_null($username)) {
             $fields['username'] = $username;
         }
 
