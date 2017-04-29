@@ -3,7 +3,7 @@
 Install with [composer](https://packagist.org/packages/open-resource-manager/client-php).
 
 ```shell
-composer require open-resource-manager/client-php
+composer require open-resource-manager/client-php dev-master
 ```
 
 ## Usage
