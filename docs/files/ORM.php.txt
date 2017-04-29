@@ -106,7 +106,7 @@ class ORM
         if (!empty($secret)) {
             $this->secret = $secret;
         } else {
-            throw new Exception('Empty ORM API secret was supplied. Grab your secret from the ORM API console.', '800');
+            throw new Exception('Empty ORM API secret was supplied. Grab your secret from the ORM API console.', 403);
         }
         // Build and set the base API url
         $this->baseURL = [($useHTTPS) ? 'https://' : 'http://', $apiHost, ':', $apiPort, '/api', '/v', $apiVersion, '/'];
@@ -124,7 +124,7 @@ class ORM
      *
      * Authenticates with the API to initiate a JWT authenticated session.
      *
-     * @return string
+     * @return \Unirest\Response
      * @throws Exception
      */
     public function authenticate()
@@ -140,8 +140,8 @@ class ORM
             $this->jwt = $token;
             // Set the authorization header
             $this->headers['Authorization'] = implode(' ', ['Bearer', $token]);
-            // Return the parsed body
-            return $token;
+            // Return the response
+            return $response;
         } else {
             // If we did not get 20X throw an exception
             throw  new Exception($response->body->message, $response->code);
