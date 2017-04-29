@@ -25,7 +25,7 @@ class Account extends Client
     protected $route = 'accounts';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -34,7 +34,7 @@ class Account extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {
@@ -43,7 +43,7 @@ class Account extends Client
 
     /**
      * @param string $username
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getFromUsername($username = '')
     {
@@ -53,7 +53,7 @@ class Account extends Client
 
     /**
      * @param string $identifier
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getFromIdentifier($identifier = '')
     {
@@ -79,7 +79,7 @@ class Account extends Client
      * @param DateTime $expires_at
      * @param bool $disabled
      * @param DateTime $birth_date
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date)
     {
@@ -160,7 +160,7 @@ class Account extends Client
      * @param int $id
      * @param string $identifier
      * @param string $username
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function delete($id, $identifier, $username)
     {

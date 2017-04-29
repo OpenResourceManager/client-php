@@ -23,7 +23,7 @@ class AliasAccount extends Client
     protected $route = 'alias-accounts';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -32,7 +32,7 @@ class AliasAccount extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {
@@ -41,7 +41,7 @@ class AliasAccount extends Client
 
     /**
      * @param string $username
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getFromUsername($username = '')
     {

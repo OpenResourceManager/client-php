@@ -22,7 +22,7 @@ class Department extends Client
     protected $route = 'departments';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -31,7 +31,7 @@ class Department extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {
@@ -40,7 +40,7 @@ class Department extends Client
 
     /**
      * @param string $code
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getFromCode($code = '')
     {

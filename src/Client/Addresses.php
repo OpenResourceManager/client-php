@@ -22,7 +22,7 @@ class Addresses extends Client
     protected $route = 'addresses';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -31,7 +31,7 @@ class Addresses extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {

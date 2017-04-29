@@ -23,7 +23,7 @@ class ResourceVerification extends Client
 
     /**
      * @param string $token
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getVerification($token = '')
     {
@@ -32,7 +32,7 @@ class ResourceVerification extends Client
 
     /**
      * @param string $token
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function postVerification($token = '')
     {

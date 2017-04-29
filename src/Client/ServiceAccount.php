@@ -22,7 +22,7 @@ class ServiceAccount extends Client
     protected $route = 'service-accounts';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -31,7 +31,7 @@ class ServiceAccount extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {
@@ -40,7 +40,7 @@ class ServiceAccount extends Client
 
     /**
      * @param string $username
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getFromUsername($username = '')
     {
@@ -50,7 +50,7 @@ class ServiceAccount extends Client
 
     /**
      * @param string $identifier
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getFromIdentifier($identifier = '')
     {

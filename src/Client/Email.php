@@ -23,7 +23,7 @@ class Email extends Client
     protected $route = 'emails';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -32,7 +32,7 @@ class Email extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {
@@ -41,7 +41,7 @@ class Email extends Client
 
     /**
      * @param string $address
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getByAddress($address = '')
     {
@@ -51,7 +51,7 @@ class Email extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForAccount($id = 0)
     {
@@ -61,7 +61,7 @@ class Email extends Client
 
     /**
      * @param string $identifier
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForIdentifier($identifier = '')
     {
@@ -71,7 +71,7 @@ class Email extends Client
 
     /**
      * @param string $username
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForUsername($username = '')
     {
@@ -80,7 +80,7 @@ class Email extends Client
     }
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getVerified()
     {
@@ -88,7 +88,7 @@ class Email extends Client
     }
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getUnverified()
     {
@@ -101,7 +101,7 @@ class Email extends Client
      * @param string $username
      * @param string $address
      * @param bool $verified
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function store($account_id, $identifier, $username, $address, $verified)
     {
@@ -133,7 +133,7 @@ class Email extends Client
     /**
      * @param int $id
      * @param string $address
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function delete($id, $address)
     {

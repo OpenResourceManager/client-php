@@ -23,7 +23,7 @@ class MobilePhone extends Client
     protected $route = 'mobile-phones';
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getList()
     {
@@ -32,7 +32,7 @@ class MobilePhone extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function get($id = 0)
     {
@@ -41,7 +41,7 @@ class MobilePhone extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForAccount($id = 0)
     {
@@ -51,7 +51,7 @@ class MobilePhone extends Client
 
     /**
      * @param string $identifier
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForIdentifier($identifier = '')
     {
@@ -61,7 +61,7 @@ class MobilePhone extends Client
 
     /**
      * @param string $username
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForUsername($username = '')
     {
@@ -70,7 +70,7 @@ class MobilePhone extends Client
     }
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getVerified()
     {
@@ -78,7 +78,7 @@ class MobilePhone extends Client
     }
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getUnverified()
     {
@@ -87,7 +87,7 @@ class MobilePhone extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForCarrier($id = 0)
     {
@@ -97,7 +97,7 @@ class MobilePhone extends Client
 
     /**
      * @param string $code
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function getForCarrierCode($code = '')
     {
@@ -114,7 +114,7 @@ class MobilePhone extends Client
      * @param int $mobile_carrier_id
      * @param string $mobile_carrier_code
      * @param bool $verified
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function store($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified)
     {
@@ -158,7 +158,7 @@ class MobilePhone extends Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     public function delete($id = 0)
     {

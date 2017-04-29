@@ -38,6 +38,10 @@ class ORM
      */
     public $headers = ['Accept' => 'application/json'];
     /**
+     * @var array
+     */
+    public $validCodes = [200, 201, 202, 204];
+    /**
      * @var null|string
      */
     protected $authURL = null;
@@ -45,7 +49,6 @@ class ORM
      * @var null|string
      */
     protected $secret = null;
-
 
     /**
      * ORM constructor.
@@ -76,7 +79,7 @@ class ORM
     }
 
     /**
-     * @return mixed
+     * @return string
      * @throws Exception
      */
     public function authenticate()
@@ -85,8 +88,8 @@ class ORM
         $data = $this->uniBody::Form(['secret' => $this->secret]);
         // Send a post request to the API
         $response = $this->uniRequest::post($this->authURL, $this->headers, $data);
-        // Check that we get 200 back
-        if ($response->code == 200 || $response->code == 201) {
+        // Check that we get 20X back
+        if (in_array($response->code, $this->validCodes)) {
             // Grab the jwt from the response body
             $token = $response->body->token;
             $this->jwt = $token;
@@ -95,7 +98,25 @@ class ORM
             // Return the parsed body
             return $token;
         } else {
-            // If we did not get 200/201 throw an exception
+            // If we did not get 20X throw an exception
+            throw  new Exception($response->body->message, $response->code);
+        }
+    }
+
+    /**
+     * @return \Unirest\Response
+     * @throws Exception
+     */
+    public function validateAuth()
+    {
+        // Send a get request to the API
+        $response = $this->uniRequest::get(implode([$this->authURL, 'validate/']), $this->headers);
+        // Check that we get 20X back
+        if (in_array($response->code, $this->validCodes)) {
+            // Return the response
+            return $response;
+        } else {
+            // If we did not get 20X throw an exception
             throw  new Exception($response->body->message, $response->code);
         }
     }

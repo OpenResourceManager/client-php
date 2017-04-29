@@ -38,7 +38,7 @@ class Client
     /**
      * @var array
      */
-    protected $validCodes = [200, 201, 204];
+    protected $validCodes = null;
 
     /**
      * Client constructor.
@@ -48,6 +48,7 @@ class Client
     {
         $this->orm = $orm;
         $this->baseURL = $orm->baseURL;
+        $this->validCodes = $this->orm->validCodes;
         if (!empty($this->route)) {
             $this->baseURL[] = $this->route;
             $this->baseURL[] = '/';
@@ -69,7 +70,7 @@ class Client
 
     /**
      * @param string $slug
-     * @return mixed
+     * @return \Unirest\Response
      * @throws Exception
      */
     public function _get($slug = '')
@@ -78,7 +79,7 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest::get($url, $this->orm->headers);
-        // Check that we get 200 back
+        // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
             return $response;
@@ -90,7 +91,7 @@ class Client
                 // Try the request again
                 return $this->_get($slug);
             } else {
-                // If we did not get 200/201/204/401 throw an exception
+                // If we did not get 20X/401 throw an exception
                 throw  new Exception($response->body->message, $response->code);
             }
         }
@@ -99,7 +100,7 @@ class Client
     /**
      * @param array $fields
      * @param string $slug
-     * @return mixed
+     * @return \Unirest\Response
      * @throws Exception
      */
     public function _post($fields = [], $slug = '')
@@ -110,7 +111,7 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest::post($url, $this->orm->headers, $data);
-        // Check that we get 200 back
+        // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
             return $response;
@@ -122,7 +123,7 @@ class Client
                 // Try the request again
                 return $this->_post($fields, $slug);
             } else {
-                // If we did not get 200/201/204/401 throw an exception
+                // If we did not get 20X/401 throw an exception
                 throw  new Exception($response->body->message, $response->code);
             }
         }
@@ -131,7 +132,7 @@ class Client
     /**
      * @param array $fields
      * @param string $slug
-     * @return mixed
+     * @return \Unirest\Response
      * @throws Exception
      */
     public function _del($fields = [], $slug = '')
@@ -142,7 +143,7 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest::delete($url, $this->orm->headers, $data);
-        // Check that we get 200 back
+        // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Return the parsed body
             return $response;
@@ -154,14 +155,14 @@ class Client
                 // Try the request again
                 return $this->_del($fields, $slug);
             } else {
-                // If we did not get 200/201/204/401 throw an exception
+                // If we did not get 20X/401 throw an exception
                 throw  new Exception($response->body->message, $response->code);
             }
         }
     }
 
     /**
-     * @return mixed
+     * @return \Unirest\Response
      */
     protected function getList()
     {
@@ -170,7 +171,7 @@ class Client
 
     /**
      * @param int $id
-     * @return mixed
+     * @return \Unirest\Response
      */
     protected function get($id = 0)
     {
@@ -179,7 +180,7 @@ class Client
 
     /**
      * @param string $code
-     * @return mixed
+     * @return \Unirest\Response
      */
     protected function getFromCode($code = '')
     {
