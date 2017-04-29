@@ -6,15 +6,19 @@ ORM client library for php.
 
 ## Install
 
+Install with composer
+
 ```shell
 composer require open-resource-manager/client-php
 ```
 
-## Documentation
-
-https://openresourcemanager.github.io/client-php/docs/
-
 ## Usage
+
+#### Docs:
+
+The API documentation is available [here](https://openresourcemanager.github.io/client-php/docs/).
+
+#### Example:
 
 ```php
 use Exception;
