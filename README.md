@@ -1,9 +1,3 @@
-# ORM Client for PHP
-
-ORM client library for php.
-
----
-
 ## Install
 
 Install with composer
