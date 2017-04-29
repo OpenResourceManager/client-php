@@ -1,1 +1,8 @@
 theme: jekyll-theme-tactile
+highlighter: rouge
+kramdown:
+   input: GFM
+   hard_wrap: false
+ gems:
+   - jekyll-php
+   - jekyll-paginate
