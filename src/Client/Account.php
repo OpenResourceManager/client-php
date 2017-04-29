@@ -181,4 +181,284 @@ class Account extends Client
         return $this->_del($fields);
     }
 
+    /**
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $duty_id
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function detachFromDuty($id, $identifier, $username, $duty_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($duty_id)) {
+            $fields['duty_id'] = $duty_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_del($fields, 'duty');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $duty_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function attachToDuty($id, $identifier, $username, $duty_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($duty_id)) {
+            $fields['duty_id'] = $duty_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_post($fields, 'duty');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $course_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function detachFromCourse($id, $identifier, $username, $course_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($course_id)) {
+            $fields['course_id'] = $course_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_del($fields, 'course');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $course_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function attachToCourse($id, $identifier, $username, $course_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($course_id)) {
+            $fields['course_id'] = $course_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_post($fields, 'course');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $department_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function detachFromDepartment($id, $identifier, $username, $department_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($department_id)) {
+            $fields['department_id'] = $department_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_del($fields, 'department');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $department_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function attachToDepartment($id, $identifier, $username, $department_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($department_id)) {
+            $fields['department_id'] = $department_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_post($fields, 'department');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $room_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function detachFromRoom($id, $identifier, $username, $room_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($room_id)) {
+            $fields['room_id'] = $room_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_del($fields, 'room');
+    }
+
+    /**
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $room_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function attachToRoom($id, $identifier, $username, $room_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($room_id)) {
+            $fields['room_id'] = $room_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_post($fields, 'room');
+    }
+
 }
