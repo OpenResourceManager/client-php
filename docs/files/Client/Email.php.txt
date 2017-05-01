@@ -108,7 +108,7 @@ class Email extends Client
     public function getForUsername($username = '')
     {
         $slug = implode('/', ['username', $username]);
-        return $this->_get($slug)->data;
+        return $this->_get($slug);
     }
 
     /**

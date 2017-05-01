@@ -67,4 +67,46 @@ class Duty extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Get Duties Owned For An Account
+     *
+     * Get a list of duties that an account is a member of by supplying it's ID.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getForAccount($id = 0)
+    {
+        $slug = implode('/', ['account', $id]);
+        return $this->_get($slug);
+    }
+
+    /**
+     * Get Duties For An Account By Identifier
+     *
+     * Get a list of duties that an account is a member of by supplying it's identifier.
+     *
+     * @param string $identifier
+     * @return \Unirest\Response
+     */
+    public function getForIdentifier($identifier = '')
+    {
+        $slug = implode('/', ['identifier', $identifier]);
+        return $this->_get($slug);
+    }
+
+    /**
+     * Get Duties For An Account By Username
+     *
+     * Get a list of duties that an account is a member of by supplying it's username.
+     *
+     * @param string $username
+     * @return \Unirest\Response
+     */
+    public function getForUsername($username = '')
+    {
+        $slug = implode('/', ['username', $username]);
+        return $this->_get($slug);
+    }
+
 }
