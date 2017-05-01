@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-541816719"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-951749788"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-541816719" class="accordion-body collapse in">
+            <div id="namespace-951749788" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-734344535"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-808702513"></a>
                                 <a href="../namespaces/OpenResourceManager.html" style="margin-left: 30px; padding-left: 0">OpenResourceManager</a>
             </div>
-            <div id="namespace-734344535" class="accordion-body collapse ">
+            <div id="namespace-808702513" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-492397622"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1878383580"></a>
                                 <a href="../namespaces/OpenResourceManager.Client.html" style="margin-left: 30px; padding-left: 0">Client</a>
             </div>
-            <div id="namespace-492397622" class="accordion-body collapse ">
+            <div id="namespace-1878383580" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -249,7 +249,9 @@
                                                                     <a href="../classes/OpenResourceManager.Client.Email.html#method_getForIdentifier" class="">getForIdentifier()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Email.html#method_getForUsername" class="">getForUsername()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Email.html#method_getVerified" class="">getVerified()</a><br />
+                                                                    <a href="../classes/OpenResourceManager.Client.Email.html#method_getVerifiedForAccount" class="">getVerifiedForAccount()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Email.html#method_getUnverified" class="">getUnverified()</a><br />
+                                                                    <a href="../classes/OpenResourceManager.Client.Email.html#method_getUnverifiedForAccount" class="">getUnverifiedForAccount()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Email.html#method_store" class="">store()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Email.html#method_delete" class="">delete()</a><br />
                                                             </section>
@@ -726,6 +728,42 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getVerifiedForAccount" name="method_getVerifiedForAccount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getVerifiedForAccount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getVerifiedForAccount(integer  <span class="argument">$id</span>) : \Unirest\Response</pre>
+                <p><em>Get Emails That Are Verified Owned By An Account</em></p>
+                <p>Get a list of emails that are verified and owned by the specified account id.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Unirest\Response
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_getUnverified" name="method_getUnverified" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">getUnverified()</h3>
@@ -734,6 +772,42 @@
                 <p><em>Get Emails That Are Unverified</em></p>
                 <p>Get a list of emails that are unverified.</p>
 
+                
+                
+                                    <h4>Returns</h4>
+                    \Unirest\Response
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUnverifiedForAccount" name="method_getUnverifiedForAccount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUnverifiedForAccount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUnverifiedForAccount(integer  <span class="argument">$id</span>) : \Unirest\Response</pre>
+                <p><em>Get Emails That Are Unverified Owned By An Account</em></p>
+                <p>Get a list of emails that are unverified and owned by the specified account id.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                            </table>
                 
                 
                                     <h4>Returns</h4>
@@ -1114,7 +1188,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on April 29th, 2017 at 06:31.
+                    on May 1st, 2017 at 15:37.
                 </section>
             </section>
         </section>

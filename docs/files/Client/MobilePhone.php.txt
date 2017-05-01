@@ -110,6 +110,20 @@ class MobilePhone extends Client
     }
 
     /**
+     * Get Verified Mobile Phones Owned By An Account
+     *
+     * Gets a list of mobile phones that are verified and owned by the specified account id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getVerifiedForAccount($id)
+    {
+        $slug = implode('/', ['verified', 'account', $id]);
+        return $this->_get($slug);
+    }
+
+    /**
      * Get Unverified Mobile Phones
      *
      * Gets a list of mobile phones that are unverified.
@@ -119,6 +133,20 @@ class MobilePhone extends Client
     public function getUnverified()
     {
         return $this->_get('unverified');
+    }
+
+    /**
+     * Get Unverified Mobile Phones Owned By An Account
+     *
+     * Gets a list of mobile phones that are unverified and owned by the specified account id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getUnverifiedForAccount($id)
+    {
+        $slug = implode('/', ['unverified', 'account', $id]);
+        return $this->_get($slug);
     }
 
     /**

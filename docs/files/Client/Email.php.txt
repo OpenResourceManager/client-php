@@ -124,6 +124,20 @@ class Email extends Client
     }
 
     /**
+     * Get Emails That Are Verified Owned By An Account
+     *
+     * Get a list of emails that are verified and owned by the specified account id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getVerifiedForAccount($id)
+    {
+        $slug = implode('/', ['verified', 'account', $id]);
+        return $this->_get($slug);
+    }
+
+    /**
      * Get Emails That Are Unverified
      *
      * Get a list of emails that are unverified.
@@ -133,6 +147,20 @@ class Email extends Client
     public function getUnverified()
     {
         return $this->_get('unverified');
+    }
+
+    /**
+     * Get Emails That Are Unverified Owned By An Account
+     *
+     * Get a list of emails that are unverified and owned by the specified account id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getUnverifiedForAccount($id)
+    {
+        $slug = implode('/', ['unverified', 'account', $id]);
+        return $this->_get($slug);
     }
 
     /**
