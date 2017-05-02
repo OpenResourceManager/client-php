@@ -52,7 +52,7 @@ class ResourceVerification extends Client
      */
     public function postVerification($token = '')
     {
-        return $this->_post([$token]);
+        return $this->_post(['token' => $token]);
     }
 
 }
