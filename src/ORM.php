@@ -144,7 +144,7 @@ class ORM
             return $response;
         } else {
             // If we did not get 20X throw an exception
-            throw  new Exception($response->body->message, $response->code);
+            throw new Exception($response->body->message, $response->code);
         }
     }
 
@@ -166,7 +166,7 @@ class ORM
             return $response;
         } else {
             // If we did not get 20X throw an exception
-            throw  new Exception($response->body->message, $response->code);
+            throw new Exception($response->body->message, $response->code);
         }
     }
 }

@@ -15,6 +15,8 @@ The API documentation is available [here](https://openresourcemanager.github.io/
 #### Example:
 
 ```php
+<?php
+
 use Exception;
 use OpenResourceManager\ORM;
 use OpenResourceManager\Client\Account as AccountClient;
@@ -46,7 +48,7 @@ class SomeClass
         } else {
             // Throw an exception if we did not get 200 back
             // display the http code with the message from the API.
-            thow new Exception($response->body->message, $response->code);
+            throw new Exception($response->body->message, $response->code);
         }
     }
 }
