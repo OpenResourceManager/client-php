@@ -10,29 +10,29 @@
 namespace OpenResourceManager\Client;
 
 /**
- * ORM Load Status Client
+ * ORM School Client
  *
- * Communicates with an ORM API to preform load status operations.
+ * Communicates with an ORM API to preform school operations.
  *
  * @license MIT
  * @license https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE MIT License
  * @author Alex Markessinis
  */
-class LoadStatus extends Client
+class School extends Client
 {
     /**
-     * Base Load Status Route
+     * Base School Route
      *
-     * The base API route for the load status client.
+     * The base API route for the school client.
      *
      * @var string
      */
-    protected $route = 'load-statuses';
+    protected $route = 'schools';
 
     /**
-     * Get Load Status List
+     * Get School List
      *
-     * Gets a list of load statuses.
+     * Gets a list of load schools.
      *
      * @return \Unirest\Response
      */
@@ -42,9 +42,9 @@ class LoadStatus extends Client
     }
 
     /**
-     * Get Load Status
+     * Get School
      *
-     * Gets a load status by it's ID.
+     * Gets a school by it's ID.
      *
      * @param int $id
      * @return \Unirest\Response
@@ -55,9 +55,9 @@ class LoadStatus extends Client
     }
 
     /**
-     * Get Load Status From Code
+     * Get School From Code
      *
-     * Gets a load status by it's code.
+     * Gets a school by it's code.
      *
      * @param string $code
      * @return \Unirest\Response

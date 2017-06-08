@@ -436,6 +436,84 @@ class Account extends Client
     }
 
     /**
+     * Detach Account From School
+     *
+     * Detach this account from a school. Using either the account ID, identifier, or username with either the school ID or code.
+     *
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $school_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function detachFromSchool($id, $identifier, $username, $school_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($school_id)) {
+            $fields['school_id'] = $school_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_del($fields, 'school');
+    }
+
+    /**
+     * Attach Account To School
+     *
+     * Attach this account to a school. Using either the account ID, identifier, or username with either the school ID or code.
+     *
+     * @param $id
+     * @param $identifier
+     * @param $username
+     * @param $school_id
+     * @param $code
+     * @return \Unirest\Response
+     */
+    public function attachToSchool($id, $identifier, $username, $school_id, $code)
+    {
+        $fields = [];
+
+        if (!is_null($id)) {
+            $fields['id'] = $id;
+        }
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($school_id)) {
+            $fields['school_id'] = $school_id;
+        }
+
+        if (!is_null($code)) {
+            $fields['code'] = $code;
+        }
+
+        return $this->_post($fields, 'school');
+    }
+
+    /**
      * Detach Account From Course
      *
      * Detach this account from a course. Using either the account ID, identifier, or username with either the course ID or code.

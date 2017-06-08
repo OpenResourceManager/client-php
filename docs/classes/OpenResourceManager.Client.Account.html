@@ -114,12 +114,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-66307566"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1464268587"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-66307566" class="accordion-body collapse in">
+            <div id="namespace-1464268587" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-154276752"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1765721255"></a>
                                 <a href="../namespaces/OpenResourceManager.html" style="margin-left: 30px; padding-left: 0">OpenResourceManager</a>
             </div>
-            <div id="namespace-154276752" class="accordion-body collapse ">
+            <div id="namespace-1765721255" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-982616738"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-122246361"></a>
                                 <a href="../namespaces/OpenResourceManager.Client.html" style="margin-left: 30px; padding-left: 0">Client</a>
             </div>
-            <div id="namespace-982616738" class="accordion-body collapse ">
+            <div id="namespace-122246361" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -186,6 +186,7 @@
                                                     <li class="class"><a href="../classes/OpenResourceManager.Client.MobilePhone.html">MobilePhone</a></li>
                                                     <li class="class"><a href="../classes/OpenResourceManager.Client.ResourceVerification.html">ResourceVerification</a></li>
                                                     <li class="class"><a href="../classes/OpenResourceManager.Client.Room.html">Room</a></li>
+                                                    <li class="class"><a href="../classes/OpenResourceManager.Client.School.html">School</a></li>
                                                     <li class="class"><a href="../classes/OpenResourceManager.Client.ServiceAccount.html">ServiceAccount</a></li>
                                                     <li class="class"><a href="../classes/OpenResourceManager.Client.State.html">State</a></li>
                                             </ul>
@@ -254,6 +255,8 @@
                                                                     <a href="../classes/OpenResourceManager.Client.Account.html#method_delete" class="">delete()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Account.html#method_detachFromDuty" class="">detachFromDuty()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Account.html#method_attachToDuty" class="">attachToDuty()</a><br />
+                                                                    <a href="../classes/OpenResourceManager.Client.Account.html#method_detachFromSchool" class="">detachFromSchool()</a><br />
+                                                                    <a href="../classes/OpenResourceManager.Client.Account.html#method_attachToSchool" class="">attachToSchool()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Account.html#method_detachFromCourse" class="">detachFromCourse()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Account.html#method_attachToCourse" class="">attachToCourse()</a><br />
                                                                     <a href="../classes/OpenResourceManager.Client.Account.html#method_detachFromDepartment" class="">detachFromDepartment()</a><br />
@@ -1107,6 +1110,118 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_detachFromSchool" name="method_detachFromSchool" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">detachFromSchool()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">detachFromSchool(  <span class="argument">$id</span>,   <span class="argument">$identifier</span>,   <span class="argument">$username</span>,   <span class="argument">$school_id</span>,   <span class="argument">$code</span>) : \Unirest\Response</pre>
+                <p><em>Detach Account From School</em></p>
+                <p>Detach this account from a school. Using either the account ID, identifier, or username with either the school ID or code.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$identifier </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$username </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$school_id </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$code </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Unirest\Response
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_attachToSchool" name="method_attachToSchool" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">attachToSchool()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">attachToSchool(  <span class="argument">$id</span>,   <span class="argument">$identifier</span>,   <span class="argument">$username</span>,   <span class="argument">$school_id</span>,   <span class="argument">$code</span>) : \Unirest\Response</pre>
+                <p><em>Attach Account To School</em></p>
+                <p>Attach this account to a school. Using either the account ID, identifier, or username with either the school ID or code.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$identifier </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$username </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$school_id </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$code </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Unirest\Response
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_detachFromCourse" name="method_detachFromCourse" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">detachFromCourse()</h3>
@@ -1754,7 +1869,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 8th, 2017 at 01:03.
+                    on June 8th, 2017 at 21:24.
                 </section>
             </section>
         </section>

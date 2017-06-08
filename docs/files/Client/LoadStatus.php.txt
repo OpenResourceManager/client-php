@@ -21,9 +21,9 @@ namespace OpenResourceManager\Client;
 class LoadStatus extends Client
 {
     /**
-     * Base Course Route
+     * Base Load Status Route
      *
-     * The base API route for the course client.
+     * The base API route for the load status client.
      *
      * @var string
      */
