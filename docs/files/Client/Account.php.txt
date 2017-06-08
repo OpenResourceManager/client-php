@@ -8,6 +8,7 @@
  */
 
 namespace OpenResourceManager\Client;
+
 use DateTime;
 
 /**
@@ -83,31 +84,60 @@ class Account extends Client
         return $this->_get($slug);
     }
 
+    /**
+     * Get Account List for Load Status
+     *
+     * Gets a list of accounts by the load status id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getForLoadStatus($id = 0)
+    {
+        $slug = implode('/', ['load-status', $id]);
+        return $this->_get($slug);
+    }
+
+    /**
+     * Get Account List for Load Status Code
+     *
+     * Gets a list of accounts by te load status code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function getForLoadStatusCode($code = '')
+    {
+        $slug = implode('/', ['load-status', 'code', $code]);
+        return $this->_get($slug);
+    }
 
     /**
      * Store Account
      *
-     * Create or update an account, by either it's ID, identifier, or username.
+     * Create or update an account, by either it's ID, identifier.
      *
-     * @param string $identifier
-     * @param string $username
-     * @param string $name_prefix
-     * @param string $name_first
-     * @param string $name_middle
-     * @param string $name_last
-     * @param string $name_postifx
-     * @param string $name_phonetic
-     * @param int $primary_duty_id
-     * @param string $primary_duty_code
-     * @param string $ssn
-     * @param bool $should_propagate_password
-     * @param string $password
+     * @param $identifier
+     * @param $username
+     * @param $name_prefix
+     * @param $name_first
+     * @param $name_middle
+     * @param $name_last
+     * @param $name_postifx
+     * @param $name_phonetic
+     * @param $primary_duty_id
+     * @param $primary_duty_code
+     * @param $ssn
+     * @param $should_propagate_password
+     * @param $password
      * @param DateTime $expires_at
-     * @param bool $disabled
+     * @param $disabled
      * @param DateTime $birth_date
+     * @param $load_status_code
+     * @param $load_status_id
      * @return \Unirest\Response
      */
-    public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date)
+    public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date, $load_status_code, $load_status_id)
     {
         $fields = [];
 
@@ -155,6 +185,14 @@ class Account extends Client
             $fields['primary_duty_code'] = $primary_duty_code;
         }
 
+        if (!is_null($load_status_id)) {
+            $fields['load_status_id'] = $load_status_id;
+        }
+
+        if (!is_null($load_status_code)) {
+            $fields['load_status_code'] = $load_status_code;
+        }
+
         if (!is_null($ssn)) {
             $fields['ssn'] = $ssn;
         }
@@ -180,6 +218,114 @@ class Account extends Client
         }
 
         return $this->_post($fields);
+    }
+
+    /**
+     * Update Account
+     *
+     * update an account, by either it's ID, identifier.
+     *
+     * @param $identifier
+     * @param $username
+     * @param $name_prefix
+     * @param $name_first
+     * @param $name_middle
+     * @param $name_last
+     * @param $name_postifx
+     * @param $name_phonetic
+     * @param $primary_duty_id
+     * @param $primary_duty_code
+     * @param $ssn
+     * @param $should_propagate_password
+     * @param $password
+     * @param DateTime $expires_at
+     * @param $disabled
+     * @param DateTime $birth_date
+     * @param $load_status_code
+     * @param $load_status_id
+     * @return \Unirest\Response
+     */
+    public function patch($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date, $load_status_code, $load_status_id)
+    {
+        $fields = [];
+
+        if (!is_null($identifier)) {
+            $fields['identifier'] = $identifier;
+        }
+
+        if (!is_null($username)) {
+            $fields['username'] = $username;
+        }
+
+        if (!is_null($name_prefix)) {
+            $fields['name_prefix'] = $name_prefix;
+        }
+
+        if (!is_null($name_first)) {
+            $fields['name_first'] = $name_first;
+        }
+
+        if (!is_null($name_middle)) {
+            $fields['name_middle'] = $name_middle;
+        }
+
+        if (!is_null($name_middle)) {
+            $fields['name_middle'] = $name_middle;
+        }
+
+        if (!is_null($name_last)) {
+            $fields['name_last'] = $name_last;
+        }
+
+        if (!is_null($name_postifx)) {
+            $fields['name_postifx'] = $name_postifx;
+        }
+
+        if (!is_null($name_phonetic)) {
+            $fields['name_phonetic'] = $name_phonetic;
+        }
+
+        if (!is_null($primary_duty_id)) {
+            $fields['primary_duty_id'] = $primary_duty_id;
+        }
+
+        if (!is_null($primary_duty_code)) {
+            $fields['primary_duty_code'] = $primary_duty_code;
+        }
+
+        if (!is_null($load_status_id)) {
+            $fields['load_status_id'] = $load_status_id;
+        }
+
+        if (!is_null($load_status_code)) {
+            $fields['load_status_code'] = $load_status_code;
+        }
+
+        if (!is_null($ssn)) {
+            $fields['ssn'] = $ssn;
+        }
+
+        if (!is_null($should_propagate_password)) {
+            $fields['should_propagate_password'] = $should_propagate_password;
+        }
+
+        if (!is_null($password)) {
+            $fields['password'] = $password;
+        }
+
+        if (!is_null($expires_at)) {
+            $fields['expires_at'] = strftime('%F %R', $expires_at);
+        }
+
+        if (!is_null($disabled)) {
+            $fields['disabled'] = $disabled;
+        }
+
+        if (!is_null($birth_date)) {
+            $fields['birth_date'] = strftime('%F', $birth_date);
+        }
+
+        return $this->_patch($fields);
     }
 
     /**

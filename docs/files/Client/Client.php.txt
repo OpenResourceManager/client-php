@@ -158,6 +158,42 @@ class Client
     }
 
     /**
+     * _Patch
+     *
+     * Performs a patch request to a specified url slug.
+     *
+     * @param array $fields
+     * @param string $slug
+     * @return \Unirest\Response
+     * @throws Exception
+     */
+    protected function _patch($fields = [], $slug = '')
+    {
+        //Build the form data
+        $data = $this->orm->uniBody->Form($fields);
+        // Build a url from the slug that was passed in
+        $url = $this->urlFromRoute($slug);
+        // Send a post request to the API
+        $response = $this->orm->uniRequest->patch($url, $this->orm->headers, $data);
+        // Check that we get 20X back
+        if (in_array($response->code, $this->validCodes)) {
+            // Return the parsed body
+            return $response;
+        } else {
+            // If the token has expired
+            if ($response->code == 401 && $response->body->message == 'Token has expired') {
+                // Authenticate again
+                $this->orm->authenticate();
+                // Try the request again
+                return $this->_post($fields, $slug);
+            } else {
+                // If we did not get 20X/401 throw an exception
+                throw  new Exception($response->body->message, $response->code);
+            }
+        }
+    }
+
+    /**
      * _Del
      *
      * Performs a delete request to a specified url slug.
