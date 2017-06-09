@@ -1,3 +1,7 @@
+# ORM Client - PHP
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 ## Install
 
 Install with [composer](https://packagist.org/packages/open-resource-manager/client-php).

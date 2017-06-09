@@ -22,5 +22,10 @@
             "OpenResourceManager\\": "src/",
             "OpenResourceManager\\Client\\": "src/Client/"
         }
+    },
+    "scripts": {
+        "docs": [
+            "vendor/bin/phpdoc -d src/ -t docs/"
+        ]
     }
 }
