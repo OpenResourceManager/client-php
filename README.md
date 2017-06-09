@@ -1,6 +1,7 @@
 # ORM Client - PHP
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/OpenResourceManager/client-php.svg)](https://github.com/OpenResourceManager/client-php/issues)
 
 ## Install
 
