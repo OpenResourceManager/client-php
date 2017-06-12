@@ -8,6 +8,7 @@
  */
 
 namespace OpenResourceManager\Client;
+
 use Exception;
 use OpenResourceManager\ORM;
 
@@ -103,21 +104,15 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest->get($url, $this->orm->headers);
-        // Check that we get 20X back
-        if (in_array($response->code, $this->validCodes)) {
+        // If the token has expired
+        if ($response->code == 401 && $response->body->message == 'Token has expired') {
+            // Authenticate again
+            $this->orm->authenticate();
+            // Try the request again
+            return $this->_get($slug);
+        } else {
             // Return the parsed body
             return $response;
-        } else {
-            // If the token has expired
-            if ($response->code == 401 && $response->body->message == 'Token has expired') {
-                // Authenticate again
-                $this->orm->authenticate();
-                // Try the request again
-                return $this->_get($slug);
-            } else {
-                // If we did not get 20X/401 throw an exception
-                throw  new Exception($response->body->message, $response->code);
-            }
         }
     }
 
@@ -139,21 +134,15 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest->post($url, $this->orm->headers, $data);
-        // Check that we get 20X back
-        if (in_array($response->code, $this->validCodes)) {
-            // Return the parsed body
-            return $response;
+        // If the token has expired
+        if ($response->code == 401 && $response->body->message == 'Token has expired') {
+            // Authenticate again
+            $this->orm->authenticate();
+            // Try the request again
+            return $this->_post($fields, $slug);
         } else {
-            // If the token has expired
-            if ($response->code == 401 && $response->body->message == 'Token has expired') {
-                // Authenticate again
-                $this->orm->authenticate();
-                // Try the request again
-                return $this->_post($fields, $slug);
-            } else {
-                // If we did not get 20X/401 throw an exception
-                throw  new Exception($response->body->message, $response->code);
-            }
+            // Return the response
+            return $response;
         }
     }
 
@@ -175,21 +164,15 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest->patch($url, $this->orm->headers, $data);
-        // Check that we get 20X back
-        if (in_array($response->code, $this->validCodes)) {
+        // If the token has expired
+        if ($response->code == 401 && $response->body->message == 'Token has expired') {
+            // Authenticate again
+            $this->orm->authenticate();
+            // Try the request again
+            return $this->_post($fields, $slug);
+        } else {
             // Return the parsed body
             return $response;
-        } else {
-            // If the token has expired
-            if ($response->code == 401 && $response->body->message == 'Token has expired') {
-                // Authenticate again
-                $this->orm->authenticate();
-                // Try the request again
-                return $this->_post($fields, $slug);
-            } else {
-                // If we did not get 20X/401 throw an exception
-                throw  new Exception($response->body->message, $response->code);
-            }
         }
     }
 
@@ -211,21 +194,15 @@ class Client
         $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest->delete($url, $this->orm->headers, $data);
-        // Check that we get 20X back
-        if (in_array($response->code, $this->validCodes)) {
+        // If the token has expired
+        if ($response->code == 401 && $response->body->message == 'Token has expired') {
+            // Authenticate again
+            $this->orm->authenticate();
+            // Try the request again
+            return $this->_del($fields, $slug);
+        } else {
             // Return the parsed body
             return $response;
-        } else {
-            // If the token has expired
-            if ($response->code == 401 && $response->body->message == 'Token has expired') {
-                // Authenticate again
-                $this->orm->authenticate();
-                // Try the request again
-                return $this->_del($fields, $slug);
-            } else {
-                // If we did not get 20X/401 throw an exception
-                throw  new Exception($response->body->message, $response->code);
-            }
         }
     }
 
