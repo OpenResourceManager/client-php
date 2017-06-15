@@ -175,6 +175,7 @@ class Email extends Client
      * @param $verified
      * @param $upstream_app_name
      * @param $verification_callback
+     * @param $confirmation_from
      * @return \Unirest\Response
      */
     public function store($account_id, $identifier, $username, $address, $verified, $upstream_app_name, $verification_callback, $confirmation_from)
