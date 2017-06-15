@@ -168,14 +168,16 @@ class Email extends Client
      *
      * Create an email by supplying either an account_id, identifier, or username.
      *
-     * @param int $account_id
-     * @param string $identifier
-     * @param string $username
-     * @param string $address
-     * @param bool $verified
+     * @param $account_id
+     * @param $identifier
+     * @param $username
+     * @param $address
+     * @param $verified
+     * @param $upstream_app_name
+     * @param $verification_callback
      * @return \Unirest\Response
      */
-    public function store($account_id, $identifier, $username, $address, $verified)
+    public function store($account_id, $identifier, $username, $address, $verified, $upstream_app_name, $verification_callback)
     {
         $fields = [];
 
@@ -197,6 +199,14 @@ class Email extends Client
 
         if (!is_null($verified)) {
             $fields['verified'] = $verified;
+        }
+
+        if (!is_null($upstream_app_name)) {
+            $fields['upstream_app_name'] = $upstream_app_name;
+        }
+
+        if (!is_null($verification_callback)) {
+            $fields['verification_callback'] = $verification_callback;
         }
 
         return $this->_post($fields);

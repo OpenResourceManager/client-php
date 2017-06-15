@@ -183,17 +183,19 @@ class MobilePhone extends Client
      * Create or update a mobile phone, based the phone number.
      * An account ID, identifier, or username can be provided to associate the mobile phone with an account.
      *
-     * @param int $account_id
-     * @param string $identifier
-     * @param string $username
-     * @param string $number
-     * @param string $country_code
-     * @param int $mobile_carrier_id
-     * @param string $mobile_carrier_code
-     * @param bool $verified
+     * @param $account_id
+     * @param $identifier
+     * @param $username
+     * @param $number
+     * @param $country_code
+     * @param $mobile_carrier_id
+     * @param $mobile_carrier_code
+     * @param $verified
+     * @param $upstream_app_name
+     * @param $verification_callback
      * @return \Unirest\Response
      */
-    public function store($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified)
+    public function store($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified, $upstream_app_name, $verification_callback)
     {
 
         $fields = [];
@@ -228,6 +230,14 @@ class MobilePhone extends Client
 
         if (!is_null($verified)) {
             $fields['verified'] = $verified;
+        }
+
+        if (!is_null($upstream_app_name)) {
+            $fields['upstream_app_name'] = $upstream_app_name;
+        }
+
+        if (!is_null($verification_callback)) {
+            $fields['verification_callback'] = $verification_callback;
         }
 
         return $this->_post($fields);
