@@ -177,7 +177,7 @@ class Email extends Client
      * @param $verification_callback
      * @return \Unirest\Response
      */
-    public function store($account_id, $identifier, $username, $address, $verified, $upstream_app_name, $verification_callback)
+    public function store($account_id, $identifier, $username, $address, $verified, $upstream_app_name, $verification_callback, $confirmation_from)
     {
         $fields = [];
 
@@ -207,6 +207,10 @@ class Email extends Client
 
         if (!is_null($verification_callback)) {
             $fields['verification_callback'] = $verification_callback;
+        }
+
+        if (!is_null($confirmation_from)) {
+            $fields['confirmation_from'] = $confirmation_from;
         }
 
         return $this->_post($fields);
