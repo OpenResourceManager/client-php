@@ -82,25 +82,42 @@ class ServiceAccount extends Client
         return $this->_get($slug);
     }
 
-
     /**
-     * Delete Alias Account
+     * Delete Service Account
      *
-     * Delete an alias account by it's ID, identifier, or username
+     * Delete a service account by it's ID.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
+     * @param int $id
      * @return \Unirest\Response
      */
-    public function delete($id, $identifier, $username)
+    public function delete($id)
     {
-        $fields = [];
+        return parent::delete($id);
+    }
 
-        if (!is_null($id)) $fields['id'] = $id;
-        if (!is_null($identifier)) $fields['identifier'] = $identifier;
-        if (!is_null($username)) $fields['username'] = $username;
+    /**
+     * Delete Service Account From Username
+     *
+     * Delete a service account by it's username.
+     *
+     * @param string $username
+     * @return \Unirest\Response
+     */
+    public function deleteFromUsername($username)
+    {
+        return parent::deleteFromUsername($username);
+    }
 
-        return $this->_del($fields);
+    /**
+     * Delete Service Account From Identifier
+     *
+     * Delete a service account by it's identifier.
+     *
+     * @param string $identifier
+     * @return \Unirest\Response
+     */
+    public function deleteFromIdentifier($identifier)
+    {
+        return parent::deleteFromIdentifier($identifier);
     }
 }

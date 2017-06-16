@@ -67,4 +67,29 @@ class Room extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Delete Room
+     *
+     * Delete a room by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Room From Code
+     *
+     * Deletes a room by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

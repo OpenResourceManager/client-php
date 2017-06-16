@@ -195,22 +195,29 @@ class Email extends Client
     }
 
     /**
-     * Delete An Email
+     * Delete Email
      *
-     * Delete an email by supplying an ID or address.
+     * Delete a email by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Email From Address
+     *
+     * Delete an email by supplying an address.
      *
      * @param int $id
      * @param string $address
      * @return \Unirest\Response
      */
-    public function delete($id, $address)
+    public function deleteFromAddress($id, $address)
     {
-        $fields = [];
-
-        if (!is_null($id)) $fields['id'] = $id;
-        if (!is_null($address)) $fields['address'] = $address;
-
-        return $this->_del($fields);
+        return $this->_del(['address' => $address]);
     }
-
 }

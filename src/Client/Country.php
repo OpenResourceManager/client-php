@@ -67,4 +67,29 @@ class Country extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Delete Country
+     *
+     * Delete a country by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Country From Code
+     *
+     * Deletes a country by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

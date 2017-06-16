@@ -66,4 +66,30 @@ class State extends Client
     {
         return parent::getFromCode($code);
     }
+
+    /**
+     * Delete State
+     *
+     * Delete a state by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete State From Code
+     *
+     * Deletes a state by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

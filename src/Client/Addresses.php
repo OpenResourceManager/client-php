@@ -109,6 +109,6 @@ class Addresses extends Client
      */
     public function delete($id)
     {
-        return $this->_del(['id' => $id]);
+        return parent::delete($id);
     }
 }

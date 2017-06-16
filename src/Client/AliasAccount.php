@@ -69,23 +69,29 @@ class AliasAccount extends Client
         return $this->_get($slug);
     }
 
-
     /**
      * Delete Alias Account
      *
-     * Delete an alias account by it's ID or username.
+     * Delete an alias account by it's ID.
      *
      * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Alias Account From Username
+     *
+     * Delete an alias account by it's username.
+     *
      * @param string $username
      * @return \Unirest\Response
      */
-    public function delete($id, $username)
+    public function deleteFromUsername($username)
     {
-        $fields = [];
-
-        if (!is_null($id)) $fields['id'] = $id;
-        if (!is_null($username)) $fields['username'] = $username;
-
-        return $this->_del($fields);
+        return parent::deleteFromUsername($username);
     }
 }

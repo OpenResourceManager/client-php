@@ -109,4 +109,29 @@ class Duty extends Client
         return $this->_get($slug);
     }
 
+    /**
+     * Delete Duty
+     *
+     * Delete a duty by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Duty From Code
+     *
+     * Deletes a duty by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

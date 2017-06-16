@@ -68,4 +68,29 @@ class MobileCarrier extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Delete Mobile Carrier
+     *
+     * Delete a mobile carrier by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Mobile Carrier From Code
+     *
+     * Deletes a mobile carrier by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

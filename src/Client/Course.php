@@ -67,4 +67,29 @@ class Course extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Delete Course
+     *
+     * Delete a course by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Course From Code
+     *
+     * Deletes a course by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }
