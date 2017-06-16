@@ -49,7 +49,7 @@ class Building extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function get($id = 0)
+    public function get($id)
     {
         return parent::get($id);
     }
@@ -62,7 +62,7 @@ class Building extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function getFromCode($code = '')
+    public function getFromCode($code)
     {
         return parent::getFromCode($code);
     }
