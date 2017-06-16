@@ -47,10 +47,10 @@ class Email extends Client
      *
      * Gets an email by it's ID.
      *
-     * @param int $id
+     * @param $id
      * @return \Unirest\Response
      */
-    public function get($id = 0)
+    public function get($id)
     {
         return parent::get($id);
     }
@@ -60,10 +60,10 @@ class Email extends Client
      *
      * Gets an email by it's address.
      *
-     * @param string $address
+     * @param $address
      * @return \Unirest\Response
      */
-    public function getByAddress($address = '')
+    public function getByAddress($address)
     {
         $slug = implode('/', ['address', $address]);
         return $this->_get($slug);
@@ -74,10 +74,10 @@ class Email extends Client
      *
      * Get a list of emails owned by an account by supplying it's ID.
      *
-     * @param int $id
+     * @param $id
      * @return \Unirest\Response
      */
-    public function getForAccount($id = 0)
+    public function getForAccount($id)
     {
         $slug = implode('/', ['account', $id]);
         return $this->_get($slug);
@@ -88,10 +88,10 @@ class Email extends Client
      *
      * Get a list of emails owned by an account by supplying it's identifier.
      *
-     * @param string $identifier
+     * @param $identifier
      * @return \Unirest\Response
      */
-    public function getForIdentifier($identifier = '')
+    public function getForIdentifier($identifier)
     {
         $slug = implode('/', ['identifier', $identifier]);
         return $this->_get($slug);
@@ -102,10 +102,10 @@ class Email extends Client
      *
      * Get a list of emails owned by an account by supplying it's username.
      *
-     * @param string $username
+     * @param $username
      * @return \Unirest\Response
      */
-    public function getForUsername($username = '')
+    public function getForUsername($username)
     {
         $slug = implode('/', ['username', $username]);
         return $this->_get($slug);
@@ -182,37 +182,14 @@ class Email extends Client
     {
         $fields = [];
 
-        if (!is_null($account_id)) {
-            $fields['account_id'] = $account_id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($address)) {
-            $fields['address'] = $address;
-        }
-
-        if (!is_null($verified)) {
-            $fields['verified'] = $verified;
-        }
-
-        if (!is_null($upstream_app_name)) {
-            $fields['upstream_app_name'] = $upstream_app_name;
-        }
-
-        if (!is_null($verification_callback)) {
-            $fields['verification_callback'] = $verification_callback;
-        }
-
-        if (!is_null($confirmation_from)) {
-            $fields['confirmation_from'] = $confirmation_from;
-        }
+        if (!is_null($account_id)) $fields['account_id'] = $account_id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($address)) $fields['address'] = $address;
+        if (!is_null($verified)) $fields['verified'] = $verified;
+        if (!is_null($upstream_app_name)) $fields['upstream_app_name'] = $upstream_app_name;
+        if (!is_null($verification_callback)) $fields['verification_callback'] = $verification_callback;
+        if (!is_null($confirmation_from)) $fields['confirmation_from'] = $confirmation_from;
 
         return $this->_post($fields);
     }
@@ -230,13 +207,8 @@ class Email extends Client
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($address)) {
-            $fields['address'] = $address;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($address)) $fields['address'] = $address;
 
         return $this->_del($fields);
     }
