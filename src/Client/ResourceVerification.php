@@ -37,7 +37,7 @@ class ResourceVerification extends Client
      * @param string $token
      * @return \Unirest\Response
      */
-    public function getVerification($token = '')
+    public function getVerification($token)
     {
         return $this->_get($token);
     }
@@ -50,7 +50,7 @@ class ResourceVerification extends Client
      * @param string $token
      * @return \Unirest\Response
      */
-    public function postVerification($token = '')
+    public function postVerification($token)
     {
         return $this->_post(['token' => $token]);
     }
