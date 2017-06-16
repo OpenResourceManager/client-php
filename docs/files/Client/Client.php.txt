@@ -245,4 +245,55 @@ class Client
         return $this->_get($slug);
     }
 
+    /**
+     * Delete
+     *
+     * Delete an object by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    protected function delete($id)
+    {
+        return $this->_del(['id' => $id]);
+    }
+
+    /**
+     * Delete From Code
+     *
+     * Delete an object by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    protected function deleteFromCode($code)
+    {
+        return $this->_del(['code' => $code]);
+    }
+
+    /**
+     * Delete From Identifier
+     *
+     * Delete an object by it's identifier.
+     *
+     * @param string $identifier
+     * @return \Unirest\Response
+     */
+    protected function deleteFromIdentifier($identifier)
+    {
+        return $this->_del(['identifier' => $identifier]);
+    }
+
+    /**
+     * Delete From Username
+     *
+     * Delete an object by it's username.
+     *
+     * @param string $username
+     * @return \Unirest\Response
+     */
+    protected function deleteFromUsername($username)
+    {
+        return $this->_del(['username' => $username]);
+    }
 }

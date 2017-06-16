@@ -67,4 +67,29 @@ class LoadStatus extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Delete Load Status
+     *
+     * Delete a load status by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Load Status From Code
+     *
+     * Deletes a load status by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

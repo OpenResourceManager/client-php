@@ -67,4 +67,29 @@ class Department extends Client
         return parent::getFromCode($code);
     }
 
+    /**
+     * Delete Department
+     *
+     * Delete a department by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Department From Code
+     *
+     * Deletes a department by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

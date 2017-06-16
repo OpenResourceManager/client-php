@@ -66,4 +66,30 @@ class Campus extends Client
     {
         return parent::getFromCode($code);
     }
+
+    /**
+     * Delete Campus
+     *
+     * Delete a campus by it's id.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Campus From Code
+     *
+     * Deletes a campus by it's code.
+     *
+     * @param string $code
+     * @return \Unirest\Response
+     */
+    public function deleteFromCode($code)
+    {
+        return parent::deleteFromCode($code);
+    }
 }

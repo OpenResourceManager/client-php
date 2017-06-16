@@ -219,22 +219,40 @@ class Account extends Client
     /**
      * Delete Account
      *
-     * Delete an account by either it's ID, identifier, or username.
+     * Delete an account by it's ID.
      *
      * @param int $id
-     * @param string $identifier
+     * @return \Unirest\Response
+     */
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    /**
+     * Delete Account From Username
+     *
+     * Delete an account by it's username.
+     *
      * @param string $username
      * @return \Unirest\Response
      */
-    public function delete($id, $identifier, $username)
+    public function deleteFromUsername($username)
     {
-        $fields = [];
+        return parent::deleteFromUsername($username);
+    }
 
-        if (!is_null($id)) $fields['id'] = $id;
-        if (!is_null($identifier)) $fields['identifier'] = $identifier;
-        if (!is_null($username)) $fields['username'] = $username;
-
-        return $this->_del($fields);
+    /**
+     * Delete Account From Identifier
+     *
+     * Delete an account by it's identifier.
+     *
+     * @param string $identifier
+     * @return \Unirest\Response
+     */
+    public function deleteFromIdentifier($identifier)
+    {
+        return parent::deleteFromIdentifier($identifier);
     }
 
     /**
