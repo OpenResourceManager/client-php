@@ -97,7 +97,7 @@ class ORM
      * @param string $apiHost
      * @param int $apiVersion
      * @param int $apiPort
-     * @param bool $useHTTPS
+     * @param boolean $useHTTPS
      * @throws Exception
      */
     function __construct($secret = '', $apiHost = 'localhost', $apiVersion = 1, $apiPort = 8000, $useHTTPS = false)

@@ -226,7 +226,7 @@ class Client
      * @param int $id
      * @return \Unirest\Response
      */
-    protected function get($id = 0)
+    protected function get($id)
     {
         return $this->_get($id);
     }
@@ -239,7 +239,7 @@ class Client
      * @param string $code
      * @return \Unirest\Response
      */
-    protected function getFromCode($code = '')
+    protected function getFromCode($code)
     {
         $slug = implode('/', ['code', $code]);
         return $this->_get($slug);

@@ -49,7 +49,7 @@ class Duty extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function get($id = 0)
+    public function get($id)
     {
         return parent::get($id);
     }
@@ -62,7 +62,7 @@ class Duty extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function getFromCode($code = '')
+    public function getFromCode($code)
     {
         return parent::getFromCode($code);
     }
@@ -75,7 +75,7 @@ class Duty extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function getForAccount($id = 0)
+    public function getForAccount($id)
     {
         $slug = implode('/', ['account', $id]);
         return $this->_get($slug);
@@ -89,7 +89,7 @@ class Duty extends Client
      * @param string $identifier
      * @return \Unirest\Response
      */
-    public function getForIdentifier($identifier = '')
+    public function getForIdentifier($identifier)
     {
         $slug = implode('/', ['identifier', $identifier]);
         return $this->_get($slug);
@@ -103,7 +103,7 @@ class Duty extends Client
      * @param string $username
      * @return \Unirest\Response
      */
-    public function getForUsername($username = '')
+    public function getForUsername($username)
     {
         $slug = implode('/', ['username', $username]);
         return $this->_get($slug);

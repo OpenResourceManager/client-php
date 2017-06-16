@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2136799072"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-316312254"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2136799072" class="accordion-body collapse in">
+            <div id="namespace-316312254" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1759474150"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1193241286"></a>
                                 <a href="../namespaces/OpenResourceManager.html" style="margin-left: 30px; padding-left: 0">OpenResourceManager</a>
             </div>
-            <div id="namespace-1759474150" class="accordion-body collapse ">
+            <div id="namespace-1193241286" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1019713899"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1571057610"></a>
                                 <a href="../namespaces/OpenResourceManager.Client.html" style="margin-left: 30px; padding-left: 0">Client</a>
             </div>
-            <div id="namespace-1019713899" class="accordion-body collapse ">
+            <div id="namespace-1571057610" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -600,7 +600,7 @@
             <article class="method">
                 <h3 class="public ">getForIdentifier()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getForIdentifier(string  <span class="argument">$identifier = &#039;&#039;</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">getForIdentifier(string  <span class="argument">$identifier</span>) : \Unirest\Response</pre>
                 <p><em>Get Mobile Phones Owned By Account From Identifier</em></p>
                 <p>Gets a list of mobile phones owned by an account using it's identifier.</p>
 
@@ -636,7 +636,7 @@
             <article class="method">
                 <h3 class="public ">getForUsername()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getForUsername(string  <span class="argument">$username = &#039;&#039;</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">getForUsername(string  <span class="argument">$username</span>) : \Unirest\Response</pre>
                 <p><em>Get Mobile Phones Owned By Account From Username</em></p>
                 <p>Gets a list of mobile phones owned by an account using it's username.</p>
 
@@ -836,7 +836,7 @@
             <article class="method">
                 <h3 class="public ">getForCarrierCode()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getForCarrierCode(string  <span class="argument">$code = &#039;&#039;</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">getForCarrierCode(string  <span class="argument">$code</span>) : \Unirest\Response</pre>
                 <p><em>Get Mobile Phones That Belong To A Carrier From Code</em></p>
                 <p>Gets a list of mobile phones that belong to a mobile carrier by the mobile carrier code.</p>
 
@@ -872,7 +872,7 @@
             <article class="method">
                 <h3 class="public ">store()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">store(  <span class="argument">$account_id</span>,   <span class="argument">$identifier</span>,   <span class="argument">$username</span>,   <span class="argument">$number</span>,   <span class="argument">$country_code</span>,   <span class="argument">$mobile_carrier_id</span>,   <span class="argument">$mobile_carrier_code</span>,   <span class="argument">$verified</span>,   <span class="argument">$upstream_app_name</span>,   <span class="argument">$verification_callback</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">store(integer  <span class="argument">$account_id</span>, string  <span class="argument">$identifier</span>, string  <span class="argument">$username</span>, string  <span class="argument">$number</span>, string  <span class="argument">$country_code</span>, integer  <span class="argument">$mobile_carrier_id</span>, string  <span class="argument">$mobile_carrier_code</span>, boolean  <span class="argument">$verified</span>, string  <span class="argument">$upstream_app_name</span>, string  <span class="argument">$verification_callback</span>) : \Unirest\Response</pre>
                 <p><em>Create Or Update Mobile Phone</em></p>
                 <p>Create or update a mobile phone, based the phone number.
 An account ID, identifier, or username can be provided to associate the mobile phone with an account.</p>
@@ -880,52 +880,52 @@ An account ID, identifier, or username can be provided to associate the mobile p
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$account_id </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$identifier </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$username </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$number </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$country_code </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$mobile_carrier_id </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$mobile_carrier_code </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>boolean</td>
                                 <td>$verified </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$upstream_app_name </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$verification_callback </td>
                                 <td></td>
                             </tr>
@@ -1215,7 +1215,7 @@ An account ID, identifier, or username can be provided to associate the mobile p
             <article class="method">
                 <h3 class="protected ">getFromCode()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getFromCode(string  <span class="argument">$code = &#039;&#039;</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">getFromCode(string  <span class="argument">$code</span>) : \Unirest\Response</pre>
                 <p><em>Get From Code</em></p>
                 <p>Gets an object by it's Code.</p>
 
@@ -1297,7 +1297,7 @@ An account ID, identifier, or username can be provided to associate the mobile p
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 15th, 2017 at 18:36.
+                    on June 16th, 2017 at 01:08.
                 </section>
             </section>
         </section>

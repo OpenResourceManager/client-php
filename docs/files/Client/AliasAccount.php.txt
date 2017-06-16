@@ -50,7 +50,7 @@ class AliasAccount extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function get($id = 0)
+    public function get($id)
     {
         return parent::get($id);
     }
@@ -63,7 +63,7 @@ class AliasAccount extends Client
      * @param string $username
      * @return \Unirest\Response
      */
-    public function getFromUsername($username = '')
+    public function getFromUsername($username)
     {
         $slug = implode('/', ['username', $username]);
         return $this->_get($slug);

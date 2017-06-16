@@ -50,7 +50,7 @@ class MobilePhone extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function get($id = 0)
+    public function get($id)
     {
         return parent::get($id);
     }
@@ -63,7 +63,7 @@ class MobilePhone extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function getForAccount($id = 0)
+    public function getForAccount($id)
     {
         $slug = implode('/', ['account', $id]);
         return $this->_get($slug);
@@ -77,7 +77,7 @@ class MobilePhone extends Client
      * @param string $identifier
      * @return \Unirest\Response
      */
-    public function getForIdentifier($identifier = '')
+    public function getForIdentifier($identifier)
     {
         $slug = implode('/', ['identifier', $identifier]);
         return $this->_get($slug);
@@ -91,7 +91,7 @@ class MobilePhone extends Client
      * @param string $username
      * @return \Unirest\Response
      */
-    public function getForUsername($username = '')
+    public function getForUsername($username)
     {
         $slug = implode('/', ['username', $username]);
         return $this->_get($slug);
@@ -157,7 +157,7 @@ class MobilePhone extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function getForCarrier($id = 0)
+    public function getForCarrier($id)
     {
         $slug = implode('/', ['mobile-carrier/id', $id]);
         return $this->_get($slug);
@@ -171,7 +171,7 @@ class MobilePhone extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function getForCarrierCode($code = '')
+    public function getForCarrierCode($code)
     {
         $slug = implode('/', ['mobile-carrier/code', $code]);
         return $this->_get($slug);
@@ -183,62 +183,32 @@ class MobilePhone extends Client
      * Create or update a mobile phone, based the phone number.
      * An account ID, identifier, or username can be provided to associate the mobile phone with an account.
      *
-     * @param $account_id
-     * @param $identifier
-     * @param $username
-     * @param $number
-     * @param $country_code
-     * @param $mobile_carrier_id
-     * @param $mobile_carrier_code
-     * @param $verified
-     * @param $upstream_app_name
-     * @param $verification_callback
+     * @param int $account_id
+     * @param string $identifier
+     * @param string $username
+     * @param string $number
+     * @param string $country_code
+     * @param int $mobile_carrier_id
+     * @param string $mobile_carrier_code
+     * @param boolean $verified
+     * @param string $upstream_app_name
+     * @param string $verification_callback
      * @return \Unirest\Response
      */
     public function store($account_id, $identifier, $username, $number, $country_code, $mobile_carrier_id, $mobile_carrier_code, $verified, $upstream_app_name, $verification_callback)
     {
-
         $fields = [];
 
-        if (!is_null($account_id)) {
-            $fields['account_id'] = $account_id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($number)) {
-            $fields['number'] = $number;
-        }
-
-        if (!is_null($country_code)) {
-            $fields['country_code'] = $country_code;
-        }
-
-        if (!is_null($mobile_carrier_id)) {
-            $fields['mobile_carrier_id'] = $mobile_carrier_id;
-        }
-
-        if (!is_null($mobile_carrier_code)) {
-            $fields['mobile_carrier_code'] = $mobile_carrier_code;
-        }
-
-        if (!is_null($verified)) {
-            $fields['verified'] = $verified;
-        }
-
-        if (!is_null($upstream_app_name)) {
-            $fields['upstream_app_name'] = $upstream_app_name;
-        }
-
-        if (!is_null($verification_callback)) {
-            $fields['verification_callback'] = $verification_callback;
-        }
+        if (!is_null($account_id)) $fields['account_id'] = $account_id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($number)) $fields['number'] = $number;
+        if (!is_null($country_code)) $fields['country_code'] = $country_code;
+        if (!is_null($mobile_carrier_id)) $fields['mobile_carrier_id'] = $mobile_carrier_id;
+        if (!is_null($mobile_carrier_code)) $fields['mobile_carrier_code'] = $mobile_carrier_code;
+        if (!is_null($verified)) $fields['verified'] = $verified;
+        if (!is_null($upstream_app_name)) $fields['upstream_app_name'] = $upstream_app_name;
+        if (!is_null($verification_callback)) $fields['verification_callback'] = $verification_callback;
 
         return $this->_post($fields);
     }
@@ -251,7 +221,7 @@ class MobilePhone extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function delete($id = 0)
+    public function delete($id)
     {
         return $this->_del(['id' => $id]);
     }

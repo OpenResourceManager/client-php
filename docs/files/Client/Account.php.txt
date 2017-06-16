@@ -51,7 +51,7 @@ class Account extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function get($id = 0)
+    public function get($id)
     {
         return parent::get($id);
     }
@@ -64,7 +64,7 @@ class Account extends Client
      * @param string $username
      * @return \Unirest\Response
      */
-    public function getFromUsername($username = '')
+    public function getFromUsername($username)
     {
         $slug = implode('/', ['username', $username]);
         return $this->_get($slug);
@@ -78,7 +78,7 @@ class Account extends Client
      * @param string $identifier
      * @return \Unirest\Response
      */
-    public function getFromIdentifier($identifier = '')
+    public function getFromIdentifier($identifier)
     {
         $slug = implode('/', ['identifier', $identifier]);
         return $this->_get($slug);
@@ -92,7 +92,7 @@ class Account extends Client
      * @param int $id
      * @return \Unirest\Response
      */
-    public function getForLoadStatus($id = 0)
+    public function getForLoadStatus($id)
     {
         $slug = implode('/', ['load-status', $id]);
         return $this->_get($slug);
@@ -106,7 +106,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function getForLoadStatusCode($code = '')
+    public function getForLoadStatusCode($code)
     {
         $slug = implode('/', ['load-status', 'code', $code]);
         return $this->_get($slug);
@@ -115,107 +115,51 @@ class Account extends Client
     /**
      * Store Account
      *
-     * Create or update an account, by either it's ID, identifier.
+     * Create or update an account, by either it's username, identifier.
      *
-     * @param $identifier
-     * @param $username
-     * @param $name_prefix
-     * @param $name_first
-     * @param $name_middle
-     * @param $name_last
-     * @param $name_postifx
-     * @param $name_phonetic
-     * @param $primary_duty_id
-     * @param $primary_duty_code
-     * @param $ssn
-     * @param $should_propagate_password
-     * @param $password
+     * @param string $identifier
+     * @param string $username
+     * @param string $name_prefix
+     * @param string $name_first
+     * @param string $name_middle
+     * @param string $name_last
+     * @param string $name_postifx
+     * @param string $name_phonetic
+     * @param int $primary_duty_id
+     * @param string $primary_duty_code
+     * @param string $ssn
+     * @param boolean $should_propagate_password
+     * @param string $password
      * @param DateTime $expires_at
-     * @param $disabled
+     * @param boolean $disabled
      * @param DateTime $birth_date
-     * @param $load_status_code
-     * @param $load_status_id
+     * @param string $load_status_code
+     * @param int $load_status_id
      * @return \Unirest\Response
      */
     public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date, $load_status_code, $load_status_id)
     {
         $fields = [];
 
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($name_prefix)) {
-            $fields['name_prefix'] = $name_prefix;
-        }
-
-        if (!is_null($name_first)) {
-            $fields['name_first'] = $name_first;
-        }
-
-        if (!is_null($name_middle)) {
-            $fields['name_middle'] = $name_middle;
-        }
-
-        if (!is_null($name_middle)) {
-            $fields['name_middle'] = $name_middle;
-        }
-
-        if (!is_null($name_last)) {
-            $fields['name_last'] = $name_last;
-        }
-
-        if (!is_null($name_postifx)) {
-            $fields['name_postifx'] = $name_postifx;
-        }
-
-        if (!is_null($name_phonetic)) {
-            $fields['name_phonetic'] = $name_phonetic;
-        }
-
-        if (!is_null($primary_duty_id)) {
-            $fields['primary_duty_id'] = $primary_duty_id;
-        }
-
-        if (!is_null($primary_duty_code)) {
-            $fields['primary_duty_code'] = $primary_duty_code;
-        }
-
-        if (!is_null($load_status_id)) {
-            $fields['load_status_id'] = $load_status_id;
-        }
-
-        if (!is_null($load_status_code)) {
-            $fields['load_status_code'] = $load_status_code;
-        }
-
-        if (!is_null($ssn)) {
-            $fields['ssn'] = $ssn;
-        }
-
-        if (!is_null($should_propagate_password)) {
-            $fields['should_propagate_password'] = $should_propagate_password;
-        }
-
-        if (!is_null($password)) {
-            $fields['password'] = $password;
-        }
-
-        if (!is_null($expires_at)) {
-            $fields['expires_at'] = strftime('%F %R', $expires_at);
-        }
-
-        if (!is_null($disabled)) {
-            $fields['disabled'] = $disabled;
-        }
-
-        if (!is_null($birth_date)) {
-            $fields['birth_date'] = strftime('%F', $birth_date);
-        }
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($name_prefix)) $fields['name_prefix'] = $name_prefix;
+        if (!is_null($name_first)) $fields['name_first'] = $name_first;
+        if (!is_null($name_middle)) $fields['name_middle'] = $name_middle;
+        if (!is_null($name_middle)) $fields['name_middle'] = $name_middle;
+        if (!is_null($name_last)) $fields['name_last'] = $name_last;
+        if (!is_null($name_postifx)) $fields['name_postifx'] = $name_postifx;
+        if (!is_null($name_phonetic)) $fields['name_phonetic'] = $name_phonetic;
+        if (!is_null($primary_duty_id)) $fields['primary_duty_id'] = $primary_duty_id;
+        if (!is_null($primary_duty_code)) $fields['primary_duty_code'] = $primary_duty_code;
+        if (!is_null($load_status_id)) $fields['load_status_id'] = $load_status_id;
+        if (!is_null($load_status_code)) $fields['load_status_code'] = $load_status_code;
+        if (!is_null($ssn)) $fields['ssn'] = $ssn;
+        if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
+        if (!is_null($password)) $fields['password'] = $password;
+        if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
+        if (!is_null($disabled)) $fields['disabled'] = $disabled;
+        if (!is_null($birth_date)) $fields['birth_date'] = strftime('%F', $birth_date);
 
         return $this->_post($fields);
     }
@@ -223,107 +167,51 @@ class Account extends Client
     /**
      * Update Account
      *
-     * update an account, by either it's ID, identifier.
+     * update an account, by either it's username, identifier.
      *
-     * @param $identifier
-     * @param $username
-     * @param $name_prefix
-     * @param $name_first
-     * @param $name_middle
-     * @param $name_last
-     * @param $name_postifx
-     * @param $name_phonetic
-     * @param $primary_duty_id
-     * @param $primary_duty_code
-     * @param $ssn
-     * @param $should_propagate_password
-     * @param $password
+     * @param string $identifier
+     * @param string $username
+     * @param string $name_prefix
+     * @param string $name_first
+     * @param string $name_middle
+     * @param string $name_last
+     * @param string $name_postifx
+     * @param string $name_phonetic
+     * @param int $primary_duty_id
+     * @param string $primary_duty_code
+     * @param string $ssn
+     * @param boolean $should_propagate_password
+     * @param string $password
      * @param DateTime $expires_at
-     * @param $disabled
+     * @param boolean $disabled
      * @param DateTime $birth_date
-     * @param $load_status_code
-     * @param $load_status_id
+     * @param string $load_status_code
+     * @param int $load_status_id
      * @return \Unirest\Response
      */
     public function patch($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date, $load_status_code, $load_status_id)
     {
         $fields = [];
 
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($name_prefix)) {
-            $fields['name_prefix'] = $name_prefix;
-        }
-
-        if (!is_null($name_first)) {
-            $fields['name_first'] = $name_first;
-        }
-
-        if (!is_null($name_middle)) {
-            $fields['name_middle'] = $name_middle;
-        }
-
-        if (!is_null($name_middle)) {
-            $fields['name_middle'] = $name_middle;
-        }
-
-        if (!is_null($name_last)) {
-            $fields['name_last'] = $name_last;
-        }
-
-        if (!is_null($name_postifx)) {
-            $fields['name_postifx'] = $name_postifx;
-        }
-
-        if (!is_null($name_phonetic)) {
-            $fields['name_phonetic'] = $name_phonetic;
-        }
-
-        if (!is_null($primary_duty_id)) {
-            $fields['primary_duty_id'] = $primary_duty_id;
-        }
-
-        if (!is_null($primary_duty_code)) {
-            $fields['primary_duty_code'] = $primary_duty_code;
-        }
-
-        if (!is_null($load_status_id)) {
-            $fields['load_status_id'] = $load_status_id;
-        }
-
-        if (!is_null($load_status_code)) {
-            $fields['load_status_code'] = $load_status_code;
-        }
-
-        if (!is_null($ssn)) {
-            $fields['ssn'] = $ssn;
-        }
-
-        if (!is_null($should_propagate_password)) {
-            $fields['should_propagate_password'] = $should_propagate_password;
-        }
-
-        if (!is_null($password)) {
-            $fields['password'] = $password;
-        }
-
-        if (!is_null($expires_at)) {
-            $fields['expires_at'] = strftime('%F %R', $expires_at);
-        }
-
-        if (!is_null($disabled)) {
-            $fields['disabled'] = $disabled;
-        }
-
-        if (!is_null($birth_date)) {
-            $fields['birth_date'] = strftime('%F', $birth_date);
-        }
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($name_prefix)) $fields['name_prefix'] = $name_prefix;
+        if (!is_null($name_first)) $fields['name_first'] = $name_first;
+        if (!is_null($name_middle)) $fields['name_middle'] = $name_middle;
+        if (!is_null($name_middle)) $fields['name_middle'] = $name_middle;
+        if (!is_null($name_last)) $fields['name_last'] = $name_last;
+        if (!is_null($name_postifx)) $fields['name_postifx'] = $name_postifx;
+        if (!is_null($name_phonetic)) $fields['name_phonetic'] = $name_phonetic;
+        if (!is_null($primary_duty_id)) $fields['primary_duty_id'] = $primary_duty_id;
+        if (!is_null($primary_duty_code)) $fields['primary_duty_code'] = $primary_duty_code;
+        if (!is_null($load_status_id)) $fields['load_status_id'] = $load_status_id;
+        if (!is_null($load_status_code)) $fields['load_status_code'] = $load_status_code;
+        if (!is_null($ssn)) $fields['ssn'] = $ssn;
+        if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
+        if (!is_null($password)) $fields['password'] = $password;
+        if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
+        if (!is_null($disabled)) $fields['disabled'] = $disabled;
+        if (!is_null($birth_date)) $fields['birth_date'] = strftime('%F', $birth_date);
 
         return $this->_patch($fields);
     }
@@ -342,17 +230,9 @@ class Account extends Client
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
 
         return $this->_del($fields);
     }
@@ -373,25 +253,11 @@ class Account extends Client
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($duty_id)) {
-            $fields['duty_id'] = $duty_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($duty_id)) $fields['duty_id'] = $duty_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_del($fields, 'duty');
     }
@@ -401,36 +267,22 @@ class Account extends Client
      *
      * Attach this account to a duty. Using either the account ID, identifier, or username with either the duty ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $duty_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $duty_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function attachToDuty($id, $identifier, $username, $duty_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($duty_id)) {
-            $fields['duty_id'] = $duty_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($duty_id)) $fields['duty_id'] = $duty_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_post($fields, 'duty');
     }
@@ -440,36 +292,22 @@ class Account extends Client
      *
      * Detach this account from a school. Using either the account ID, identifier, or username with either the school ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $school_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $school_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function detachFromSchool($id, $identifier, $username, $school_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($school_id)) {
-            $fields['school_id'] = $school_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($school_id)) $fields['school_id'] = $school_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_del($fields, 'school');
     }
@@ -479,36 +317,22 @@ class Account extends Client
      *
      * Attach this account to a school. Using either the account ID, identifier, or username with either the school ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $school_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $school_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function attachToSchool($id, $identifier, $username, $school_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($school_id)) {
-            $fields['school_id'] = $school_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($school_id)) $fields['school_id'] = $school_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_post($fields, 'school');
     }
@@ -518,36 +342,22 @@ class Account extends Client
      *
      * Detach this account from a course. Using either the account ID, identifier, or username with either the course ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $course_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $course_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function detachFromCourse($id, $identifier, $username, $course_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($course_id)) {
-            $fields['course_id'] = $course_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($course_id)) $fields['course_id'] = $course_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_del($fields, 'course');
     }
@@ -557,36 +367,22 @@ class Account extends Client
      *
      * Attach this account to a course. Using either the account ID, identifier, or username with either the course ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $course_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $course_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function attachToCourse($id, $identifier, $username, $course_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($course_id)) {
-            $fields['course_id'] = $course_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($course_id)) $fields['course_id'] = $course_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_post($fields, 'course');
     }
@@ -596,36 +392,22 @@ class Account extends Client
      *
      * Detach this account from a department. Using either the account ID, identifier, or username with either the department ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $department_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $department_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function detachFromDepartment($id, $identifier, $username, $department_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($department_id)) {
-            $fields['department_id'] = $department_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($department_id)) $fields['department_id'] = $department_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_del($fields, 'department');
     }
@@ -635,36 +417,22 @@ class Account extends Client
      *
      * Attach this account to a department. Using either the account ID, identifier, or username with either the department ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $department_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $department_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function attachToDepartment($id, $identifier, $username, $department_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($department_id)) {
-            $fields['department_id'] = $department_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($department_id)) $fields['department_id'] = $department_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_post($fields, 'department');
     }
@@ -674,36 +442,22 @@ class Account extends Client
      *
      * Detach this account from a room. Using either the account ID, identifier, or username with either the room ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $room_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $room_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function detachFromRoom($id, $identifier, $username, $room_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($room_id)) {
-            $fields['room_id'] = $room_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($room_id)) $fields['room_id'] = $room_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_del($fields, 'room');
     }
@@ -713,36 +467,22 @@ class Account extends Client
      *
      * Attach this account to a room. Using either the account ID, identifier, or username with either the room ID or code.
      *
-     * @param $id
-     * @param $identifier
-     * @param $username
-     * @param $room_id
-     * @param $code
+     * @param int $id
+     * @param string $identifier
+     * @param string $username
+     * @param int $room_id
+     * @param string $code
      * @return \Unirest\Response
      */
     public function attachToRoom($id, $identifier, $username, $room_id, $code)
     {
         $fields = [];
 
-        if (!is_null($id)) {
-            $fields['id'] = $id;
-        }
-
-        if (!is_null($identifier)) {
-            $fields['identifier'] = $identifier;
-        }
-
-        if (!is_null($username)) {
-            $fields['username'] = $username;
-        }
-
-        if (!is_null($room_id)) {
-            $fields['room_id'] = $room_id;
-        }
-
-        if (!is_null($code)) {
-            $fields['code'] = $code;
-        }
+        if (!is_null($id)) $fields['id'] = $id;
+        if (!is_null($identifier)) $fields['identifier'] = $identifier;
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($room_id)) $fields['room_id'] = $room_id;
+        if (!is_null($code)) $fields['code'] = $code;
 
         return $this->_post($fields, 'room');
     }
