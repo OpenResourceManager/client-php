@@ -46,7 +46,7 @@ class Addresses extends Client
      *
      * Gets an address by it's ID.
      *
-     * @param $id
+     * @param int $id
      * @return \Unirest\Response
      */
     public function get($id)
@@ -59,21 +59,21 @@ class Addresses extends Client
      *
      * Store an address.
      *
-     * @param $account_id
-     * @param $identifier
-     * @param $username
-     * @param $addressee
-     * @param $organization
-     * @param $line_1
-     * @param $line_2
-     * @param $city
-     * @param $state_id
-     * @param $state_code
-     * @param $zip
-     * @param $country_id
-     * @param $country_code
-     * @param $latitude
-     * @param $longitude
+     * @param int $account_id
+     * @param string $identifier
+     * @param string $username
+     * @param string $addressee
+     * @param string $organization
+     * @param string $line_1
+     * @param string $line_2
+     * @param string $city
+     * @param int $state_id
+     * @param string $state_code
+     * @param string $zip
+     * @param int $country_id
+     * @param string $country_code
+     * @param string $latitude
+     * @param string $longitude
      * @return \Unirest\Response
      */
     public function store($account_id, $identifier, $username, $addressee, $organization, $line_1, $line_2, $city, $state_id, $state_code, $zip, $country_id, $country_code, $latitude, $longitude)
@@ -104,7 +104,7 @@ class Addresses extends Client
      *
      * Delete an address by it's ID.
      *
-     * @param $id
+     * @param int $id
      * @return \Unirest\Response
      */
     public function delete($id)
