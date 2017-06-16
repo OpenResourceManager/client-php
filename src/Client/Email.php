@@ -47,7 +47,7 @@ class Email extends Client
      *
      * Gets an email by it's ID.
      *
-     * @param $id
+     * @param int $id
      * @return \Unirest\Response
      */
     public function get($id)
@@ -60,7 +60,7 @@ class Email extends Client
      *
      * Gets an email by it's address.
      *
-     * @param $address
+     * @param string $address
      * @return \Unirest\Response
      */
     public function getByAddress($address)
@@ -74,7 +74,7 @@ class Email extends Client
      *
      * Get a list of emails owned by an account by supplying it's ID.
      *
-     * @param $id
+     * @param int $id
      * @return \Unirest\Response
      */
     public function getForAccount($id)
@@ -88,7 +88,7 @@ class Email extends Client
      *
      * Get a list of emails owned by an account by supplying it's identifier.
      *
-     * @param $identifier
+     * @param string $identifier
      * @return \Unirest\Response
      */
     public function getForIdentifier($identifier)
@@ -102,7 +102,7 @@ class Email extends Client
      *
      * Get a list of emails owned by an account by supplying it's username.
      *
-     * @param $username
+     * @param string $username
      * @return \Unirest\Response
      */
     public function getForUsername($username)
@@ -168,14 +168,14 @@ class Email extends Client
      *
      * Create an email by supplying either an account_id, identifier, or username.
      *
-     * @param $account_id
-     * @param $identifier
-     * @param $username
-     * @param $address
-     * @param $verified
-     * @param $upstream_app_name
-     * @param $verification_callback
-     * @param $confirmation_from
+     * @param int $account_id
+     * @param string $identifier
+     * @param string $username
+     * @param string $address
+     * @param boolean $verified
+     * @param string $upstream_app_name
+     * @param string $verification_callback
+     * @param string $confirmation_from
      * @return \Unirest\Response
      */
     public function store($account_id, $identifier, $username, $address, $verified, $upstream_app_name, $verification_callback, $confirmation_from)
