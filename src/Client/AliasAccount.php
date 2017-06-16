@@ -9,6 +9,8 @@
 
 namespace OpenResourceManager\Client;
 
+use DateTime;
+
 /**
  * ORM Alias Account Client
  *
@@ -67,6 +69,37 @@ class AliasAccount extends Client
     {
         $slug = implode('/', ['username', $username]);
         return $this->_get($slug);
+    }
+
+    /**
+     * Store Alias Account
+     *
+     * Create or update an alias account, by it's username.
+     *
+     * @param string $username
+     * @param boolean $should_propagate_password
+     * @param string $password
+     * @param int $account_id
+     * @param string $account_identifier
+     * @param string $account_username
+     * @param DateTime $expires_at
+     * @param boolean $disabled
+     * @return \Unirest\Response
+     */
+    public function store($username, $should_propagate_password, $password, $account_id, $account_identifier, $account_username, DateTime $expires_at, $disabled)
+    {
+        $fields = [];
+
+        if (!is_null($username)) $fields['username'] = $username;
+        if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
+        if (!is_null($password)) $fields['password'] = $password;
+        if (!is_null($account_id)) $fields['account_id'] = $account_id;
+        if (!is_null($account_identifier)) $fields['account_identifier'] = $account_identifier;
+        if (!is_null($account_username)) $fields['account_username'] = $account_username;
+        if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
+        if (!is_null($disabled)) $fields['disabled'] = $disabled;
+
+        return $this->_post($fields);
     }
 
     /**
