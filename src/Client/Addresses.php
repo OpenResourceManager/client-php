@@ -55,6 +55,48 @@ class Addresses extends Client
     }
 
     /**
+     * Get Addresses Owned By Account
+     *
+     * Get a list of addresses owned by an account by supplying it's ID.
+     *
+     * @param int $id
+     * @return \Unirest\Response
+     */
+    public function getForAccount($id)
+    {
+        $slug = implode('/', ['account', $id]);
+        return $this->_get($slug);
+    }
+
+    /**
+     * Get Addresses Owned By Account From Identifier
+     *
+     * Get a list of addresses owned by an account by supplying it's identifier.
+     *
+     * @param string $identifier
+     * @return \Unirest\Response
+     */
+    public function getForIdentifier($identifier)
+    {
+        $slug = implode('/', ['identifier', $identifier]);
+        return $this->_get($slug);
+    }
+
+    /**
+     * Get Addresses Owned By Account From Username
+     *
+     * Get a list of addresses owned by an account by supplying it's username.
+     *
+     * @param string $username
+     * @return \Unirest\Response
+     */
+    public function getForUsername($username)
+    {
+        $slug = implode('/', ['username', $username]);
+        return $this->_get($slug);
+    }
+
+    /**
      * Store Address
      *
      * Store an address.
