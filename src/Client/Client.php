@@ -40,6 +40,14 @@ class Client
      */
     protected $route = null;
     /**
+     * Results Page
+     *
+     * The page of results to get.
+     *
+     * @var int
+     */
+    public $page = 1;
+    /**
      * ORM Connection
      *
      * The current ORM connection.
@@ -80,14 +88,13 @@ class Client
      * Forms an API url from a route path.
      *
      * @param string $path
-     * @param null $page
      * @return string
      */
-    protected function urlFromRoute($path = '', $page = null)
+    protected function urlFromRoute($path = '')
     {
         $url = $this->baseURL;
         $url[] = $path;
-        if (!empty($page)) $url[] = '?page=' . $page;
+        if (!empty($this->page)) $url[] = '?page=' . $this->page;
         return implode('', $url);
     }
 
@@ -97,13 +104,12 @@ class Client
      * Performs a get request to a specified url slug.
      *
      * @param string $slug
-     * @param null $page
      * @return \Unirest\Response
      */
-    protected function _get($slug = '', $page = null)
+    protected function _get($slug = '')
     {
         // Build a url from the slug that was passed in
-        $url = $this->urlFromRoute($slug, $page);
+        $url = $this->urlFromRoute($slug);
         // Send a post request to the API
         $response = $this->orm->uniRequest->get($url, $this->orm->headers);
         // If the token has expired
@@ -213,12 +219,11 @@ class Client
      *
      * Gets a list of objects.
      *
-     * @param int $page
      * @return \Unirest\Response
      */
-    protected function getList($page = 1)
+    protected function getList()
     {
-        return $this->_get('', $page);
+        return $this->_get('');
     }
 
     /**
