@@ -218,7 +218,7 @@ class Client
      */
     protected function getList($page = 1)
     {
-        return $this->_get($page);
+        return $this->_get('', $page);
     }
 
     /**
