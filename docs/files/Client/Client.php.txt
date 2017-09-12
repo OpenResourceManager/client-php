@@ -46,7 +46,7 @@ class Client
      *
      * @var int
      */
-    public $page = 1;
+    protected $page = 1;
     /**
      * ORM Connection
      *
@@ -80,6 +80,32 @@ class Client
             $this->baseURL[] = $this->route;
             $this->baseURL[] = '/';
         }
+    }
+
+    /**
+     * Add Page
+     *
+     * Adds to the target page.
+     *
+     * @param int $page
+     */
+    public function addPage($page = 1)
+    {
+        $this->page += $page;
+        if($this->page <= 0) $this->page = 1;
+    }
+
+    /**
+     * Subtract Page
+     *
+     * Sets the target page back.
+     *
+     * @param int $page
+     */
+    public function subPage($page = 1)
+    {
+        $this->page -= $page;
+        if($this->page <= 0) $this->page = 1;
     }
 
     /**
