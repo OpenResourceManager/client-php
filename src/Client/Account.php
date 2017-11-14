@@ -189,7 +189,7 @@ class Account extends Client
      * @param int $load_status_id
      * @return \Unirest\Response
      */
-    public function patch($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date, $load_status_code, $load_status_id)
+    public function patch($identifier = null, $username = null, $name_prefix = null, $name_first = null, $name_middle = null, $name_last = null, $name_postifx = null, $name_phonetic = null, $primary_duty_id = null, $primary_duty_code = null, $ssn = null, $should_propagate_password = null, $password = null, $expires_at = null, $disabled = null, $birth_date = null, $load_status_code = null, $load_status_id = null)
     {
         $fields = [];
 
@@ -267,7 +267,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function detachFromDuty($id, $identifier, $username, $duty_id, $code)
+    public function detachFromDuty($id = null, $identifier = null, $username = null, $duty_id = null, $code = null)
     {
         $fields = [];
 
@@ -292,7 +292,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function attachToDuty($id, $identifier, $username, $duty_id, $code)
+    public function attachToDuty($id = null, $identifier = null, $username = null, $duty_id = null, $code = null)
     {
         $fields = [];
 
@@ -317,7 +317,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function detachFromSchool($id, $identifier, $username, $school_id, $code)
+    public function detachFromSchool($id = null, $identifier = null, $username = null, $school_id = null, $code = null)
     {
         $fields = [];
 
@@ -342,7 +342,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function attachToSchool($id, $identifier, $username, $school_id, $code)
+    public function attachToSchool($id = null, $identifier = null, $username = null, $school_id = null, $code = null)
     {
         $fields = [];
 
@@ -367,7 +367,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function detachFromCourse($id, $identifier, $username, $course_id, $code)
+    public function detachFromCourse($id = null, $identifier = null, $username = null, $course_id = null, $code = null)
     {
         $fields = [];
 
@@ -392,7 +392,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function attachToCourse($id, $identifier, $username, $course_id, $code)
+    public function attachToCourse($id = null, $identifier = null, $username = null, $course_id = null, $code = null)
     {
         $fields = [];
 
@@ -417,7 +417,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function detachFromDepartment($id, $identifier, $username, $department_id, $code)
+    public function detachFromDepartment($id = null, $identifier = null, $username = null, $department_id = null, $code = null)
     {
         $fields = [];
 
@@ -442,7 +442,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function attachToDepartment($id, $identifier, $username, $department_id, $code)
+    public function attachToDepartment($id = null, $identifier = null, $username = null, $department_id = null, $code = null)
     {
         $fields = [];
 
@@ -467,7 +467,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function detachFromRoom($id, $identifier, $username, $room_id, $code)
+    public function detachFromRoom($id = null, $identifier = null, $username = null, $room_id = null, $code = null)
     {
         $fields = [];
 
@@ -492,7 +492,7 @@ class Account extends Client
      * @param string $code
      * @return \Unirest\Response
      */
-    public function attachToRoom($id, $identifier, $username, $room_id, $code)
+    public function attachToRoom($id = null, $identifier = null, $username = null, $room_id = null, $code = null)
     {
         $fields = [];
 
