@@ -15,7 +15,7 @@
         "mashape/unirest-php": "^3.0"
     },
     "require-dev": {
-        "phpdocumentor/phpdocumentor": "2.*"
+        "phpdocumentor/phpdocumentor": "^2.9"
     },
 	"autoload": {
         "psr-4": {
@@ -25,7 +25,7 @@
     },
     "scripts": {
         "docs": [
-            "vendor/bin/phpdoc -d src/ -t docs/"
+            "phpdoc -d src/ -t docs/ --cache-folder docCache/"
         ]
     }
 }

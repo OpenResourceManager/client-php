@@ -83,6 +83,31 @@ class Client
     }
 
     /**
+     * Get Page
+     *
+     * Returns the current page
+     *
+     * @return int
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * Set Page
+     *
+     * Sets the target page.
+     *
+     * @param int $page
+     */
+    public function setPage($page = 1)
+    {
+        $this->page = $page;
+        if ($this->page <= 0) $this->page = 1;
+    }
+
+    /**
      * Add Page
      *
      * Adds to the target page.
@@ -92,7 +117,7 @@ class Client
     public function addPage($page = 1)
     {
         $this->page += $page;
-        if($this->page <= 0) $this->page = 1;
+        if ($this->page <= 0) $this->page = 1;
     }
 
     /**
@@ -105,7 +130,7 @@ class Client
     public function subPage($page = 1)
     {
         $this->page -= $page;
-        if($this->page <= 0) $this->page = 1;
+        if ($this->page <= 0) $this->page = 1;
     }
 
     /**
