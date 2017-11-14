@@ -25,7 +25,7 @@
     },
     "scripts": {
         "docs": [
-            "phpdoc -d src/ -t docs/ --cache-folder docCache/"
+            "vendor/bin/phpdoc -d src/ -t docs/ --cache-folder docCache/"
         ]
     }
 }
