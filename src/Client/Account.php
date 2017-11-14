@@ -137,7 +137,7 @@ class Account extends Client
      * @param int $load_status_id
      * @return \Unirest\Response
      */
-    public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, DateTime $expires_at, $disabled, DateTime $birth_date, $load_status_code, $load_status_id)
+    public function store($identifier, $username, $name_prefix, $name_first, $name_middle, $name_last, $name_postifx, $name_phonetic, $primary_duty_id, $primary_duty_code, $ssn, $should_propagate_password, $password, $expires_at, $disabled, $birth_date, $load_status_code, $load_status_id)
     {
         $fields = [];
 
