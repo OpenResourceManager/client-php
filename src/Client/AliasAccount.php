@@ -86,7 +86,16 @@ class AliasAccount extends Client
      * @param boolean $disabled
      * @return \Unirest\Response
      */
-    public function store($username, $should_propagate_password, $password, $account_id, $account_identifier, $account_username, DateTime $expires_at, $disabled)
+    public function store(
+        $username = null,
+        $should_propagate_password = null,
+        $password = null,
+        $account_id = null,
+        $account_identifier = null,
+        $account_username = null,
+        $expires_at = null,
+        $disabled = null
+    )
     {
         $fields = [];
 

@@ -118,7 +118,23 @@ class Addresses extends Client
      * @param string $longitude
      * @return \Unirest\Response
      */
-    public function store($account_id, $identifier, $username, $addressee, $organization, $line_1, $line_2, $city, $state_id, $state_code, $zip, $country_id, $country_code, $latitude, $longitude)
+    public function store(
+        $account_id = null,
+        $identifier = null,
+        $username = null,
+        $addressee = null,
+        $organization = null,
+        $line_1 = null,
+        $line_2 = null,
+        $city = null,
+        $state_id = null,
+        $state_code = null,
+        $zip = null,
+        $country_id = null,
+        $country_code = null,
+        $latitude = null,
+        $longitude = null
+    )
     {
         $fields = [];
 

@@ -164,13 +164,19 @@ class Client
         // Send a post request to the API
         $response = $this->orm->uniRequest->get($url, $this->orm->headers);
         // If the token has expired
-        if ($response->code == 401 && $response->body->message == 'Token has expired') {
-            // Authenticate again
-            $this->orm->authenticate();
-            // Try the request again
-            return $this->_get($slug);
+        if ($response->code == 401) {
+            if (isset($response->body->message)) {
+                if ($response->body->message == 'Token has expired') {
+                    // Authenticate again
+                    $this->orm->authenticate();
+                    // Try the request again
+                    return $this->_get($slug);
+                }
+            }
+            // Return the response
+            return $response;
         } else {
-            // Return the parsed body
+            // Return the response
             return $response;
         }
     }
@@ -194,11 +200,17 @@ class Client
         // Send a post request to the API
         $response = $this->orm->uniRequest->post($url, $this->orm->headers, $data);
         // If the token has expired
-        if ($response->code == 401 && $response->body->message == 'Token has expired') {
-            // Authenticate again
-            $this->orm->authenticate();
-            // Try the request again
-            return $this->_post($fields, $slug);
+        if ($response->code == 401) {
+            if (isset($response->body->message)) {
+                if ($response->body->message == 'Token has expired') {
+                    // Authenticate again
+                    $this->orm->authenticate();
+                    // Try the request again
+                    return $this->_post($fields, $slug);
+                }
+            }
+            // Return the response
+            return $response;
         } else {
             // Return the response
             return $response;
@@ -224,13 +236,19 @@ class Client
         // Send a post request to the API
         $response = $this->orm->uniRequest->patch($url, $this->orm->headers, $data);
         // If the token has expired
-        if ($response->code == 401 && $response->body->message == 'Token has expired') {
-            // Authenticate again
-            $this->orm->authenticate();
-            // Try the request again
-            return $this->_post($fields, $slug);
+        if ($response->code == 401) {
+            if (isset($response->body->message)) {
+                if ($response->body->message == 'Token has expired') {
+                    // Authenticate again
+                    $this->orm->authenticate();
+                    // Try the request again
+                    return $this->_patch($fields, $slug);
+                }
+            }
+            // Return the response
+            return $response;
         } else {
-            // Return the parsed body
+            // Return the response
             return $response;
         }
     }
@@ -254,13 +272,19 @@ class Client
         // Send a post request to the API
         $response = $this->orm->uniRequest->delete($url, $this->orm->headers, $data);
         // If the token has expired
-        if ($response->code == 401 && $response->body->message == 'Token has expired') {
-            // Authenticate again
-            $this->orm->authenticate();
-            // Try the request again
-            return $this->_del($fields, $slug);
+        if ($response->code == 401) {
+            if (isset($response->body->message)) {
+                if ($response->body->message == 'Token has expired') {
+                    // Authenticate again
+                    $this->orm->authenticate();
+                    // Try the request again
+                    return $this->_del($fields, $slug);
+                }
+            }
+            // Return the response
+            return $response;
         } else {
-            // Return the parsed body
+            // Return the response
             return $response;
         }
     }

@@ -178,7 +178,16 @@ class Email extends Client
      * @param string $confirmation_from
      * @return \Unirest\Response
      */
-    public function store($account_id = null, $identifier = null, $username = null, $address = null, $verified = null, $upstream_app_name = null, $verification_callback = null, $confirmation_from = null)
+    public function store(
+        $account_id = null,
+        $identifier = null,
+        $username = null,
+        $address = null,
+        $verified = null,
+        $upstream_app_name = null,
+        $verification_callback = null,
+        $confirmation_from = null
+    )
     {
         $fields = [];
 

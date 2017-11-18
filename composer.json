@@ -1,31 +1,44 @@
 {
-    "name": "open-resource-manager/client-php",
-    "description": "ORM client library for php.",
-    "keywords": ["orm", "open resource manager", "client"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Alex Markessinis",
-            "email": "markea125@gmail.com"
-        }
-    ],
-    "type": "library",
-    "require": {
-		"php": ">=5.4.0",
-        "mashape/unirest-php": "^3.0"
-    },
-    "require-dev": {
-        "phpdocumentor/phpdocumentor": "^2.9"
-    },
-	"autoload": {
-        "psr-4": {
-            "OpenResourceManager\\": "src/",
-            "OpenResourceManager\\Client\\": "src/Client/"
-        }
-    },
-    "scripts": {
-        "docs": [
-            "vendor/bin/phpdoc -d src/ -t docs/ --cache-folder docCache/"
-        ]
+  "name": "open-resource-manager/client-php",
+  "description": "ORM client library for php.",
+  "keywords": [
+    "orm",
+    "open resource manager",
+    "client"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Markessinis",
+      "email": "markea125@gmail.com"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/OpenResourceManager/client-php/issues",
+    "source": "https://github.com/OpenResourceManager/client-php"
+  },
+  "type": "library",
+  "require": {
+    "php": ">=5.4.0",
+    "mashape/unirest-php": "^3.0"
+  },
+  "require-dev": {
+    "phpdocumentor/phpdocumentor": "^2.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpenResourceManager\\": "src/",
+      "OpenResourceManager\\Client\\": "src/Client/"
+    }
+  },
+  "scripts": {
+    "docs": [
+      "vendor/bin/phpdoc -d src/ -t docs/ --cache-folder docCache/"
+    ]
+  },
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
 }
