@@ -138,12 +138,12 @@ class Account extends Client
      * @return \Unirest\Response
      */
     public function store(
-        $identifier = null,
-        $username = null,
+        $identifier,
+        $username,
         $name_prefix = null,
-        $name_first = null,
+        $name_first,
         $name_middle = null,
-        $name_last = null,
+        $name_last,
         $name_postifx = null,
         $name_phonetic = null,
         $primary_duty_id = null,
@@ -160,13 +160,12 @@ class Account extends Client
     {
         $fields = [];
 
-        if (!is_null($identifier)) $fields['identifier'] = $identifier;
-        if (!is_null($username)) $fields['username'] = $username;
+        $fields['identifier'] = $identifier;
+        $fields['username'] = $username;
         if (!is_null($name_prefix)) $fields['name_prefix'] = $name_prefix;
-        if (!is_null($name_first)) $fields['name_first'] = $name_first;
+        $fields['name_first'] = $name_first;
         if (!is_null($name_middle)) $fields['name_middle'] = $name_middle;
-        if (!is_null($name_middle)) $fields['name_middle'] = $name_middle;
-        if (!is_null($name_last)) $fields['name_last'] = $name_last;
+        $fields['name_last'] = $name_last;
         if (!is_null($name_postifx)) $fields['name_postifx'] = $name_postifx;
         if (!is_null($name_phonetic)) $fields['name_phonetic'] = $name_phonetic;
         if (!is_null($primary_duty_id)) $fields['primary_duty_id'] = $primary_duty_id;
@@ -180,7 +179,7 @@ class Account extends Client
         if (!is_null($disabled)) $fields['disabled'] = $disabled;
         if (!is_null($birth_date)) $fields['birth_date'] = strftime('%F', $birth_date);
 
-        return $this->_post($fields);
+        return parent::store($fields);
     }
 
     /**

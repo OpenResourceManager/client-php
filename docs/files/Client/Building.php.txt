@@ -68,6 +68,28 @@ class Building extends Client
     }
 
     /**
+     * Store Building
+     *
+     * Create or update a building, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @param int $campus_id
+     * @param string $campus_code
+     * @return \Unirest\Response
+     */
+    public function store($code, $label, $campus_id = null, $campus_code = null)
+    {
+        $fields = [];
+
+        //@todo validate params, throw exception when they are missing
+        if (!is_null($campus_id)) $fields['campus_id'] = $campus_id;
+        if (!is_null($campus_code)) $fields['campus_code'] = $campus_code;
+
+        return parent::store($fields, $code, $label);
+    }
+
+    /**
      * Delete Building
      *
      * Delete a building by it's id.

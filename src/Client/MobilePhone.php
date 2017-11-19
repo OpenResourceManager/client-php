@@ -199,7 +199,7 @@ class MobilePhone extends Client
         $account_id = null,
         $identifier = null,
         $username = null,
-        $number = null,
+        $number,
         $country_code = null,
         $mobile_carrier_id = null,
         $mobile_carrier_code = null,
@@ -209,11 +209,11 @@ class MobilePhone extends Client
     )
     {
         $fields = [];
-
+        //@todo validate params, throw exception when they are missing
         if (!is_null($account_id)) $fields['account_id'] = $account_id;
         if (!is_null($identifier)) $fields['identifier'] = $identifier;
         if (!is_null($username)) $fields['username'] = $username;
-        if (!is_null($number)) $fields['number'] = $number;
+        $fields['number'] = $number;
         if (!is_null($country_code)) $fields['country_code'] = $country_code;
         if (!is_null($mobile_carrier_id)) $fields['mobile_carrier_id'] = $mobile_carrier_id;
         if (!is_null($mobile_carrier_code)) $fields['mobile_carrier_code'] = $mobile_carrier_code;
@@ -221,7 +221,7 @@ class MobilePhone extends Client
         if (!is_null($upstream_app_name)) $fields['upstream_app_name'] = $upstream_app_name;
         if (!is_null($verification_callback)) $fields['verification_callback'] = $verification_callback;
 
-        return $this->_post($fields);
+        return parent::store($fields);
     }
 
     /**

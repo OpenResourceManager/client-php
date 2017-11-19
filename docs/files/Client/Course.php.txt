@@ -68,6 +68,30 @@ class Course extends Client
     }
 
     /**
+     * Store Course
+     *
+     * Create or update a course, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @param int $course_level
+     * @param int $department_id
+     * @param string $department_code
+     * @return \Unirest\Response
+     */
+    public function store($code, $label, $course_level, $department_id = null, $department_code = null)
+    {
+        $fields = [];
+
+        //@todo validate params, throw exception when they are missing
+        $fields['course_level'] = $course_level;
+        if (!is_null($department_id)) $fields['department_id'] = $department_id;
+        if (!is_null($department_code)) $fields['department_code'] = $department_code;
+
+        return parent::store($fields, $code, $label);
+    }
+
+    /**
      * Delete Course
      *
      * Delete a course by it's id.

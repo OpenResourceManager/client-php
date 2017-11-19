@@ -182,7 +182,7 @@ class Email extends Client
         $account_id = null,
         $identifier = null,
         $username = null,
-        $address = null,
+        $address,
         $verified = null,
         $upstream_app_name = null,
         $verification_callback = null,
@@ -190,17 +190,17 @@ class Email extends Client
     )
     {
         $fields = [];
-
+        //@todo validate params, throw exception when they are missing
         if (!is_null($account_id)) $fields['account_id'] = $account_id;
         if (!is_null($identifier)) $fields['identifier'] = $identifier;
         if (!is_null($username)) $fields['username'] = $username;
-        if (!is_null($address)) $fields['address'] = $address;
+        $fields['address'] = $address;
         if (!is_null($verified)) $fields['verified'] = $verified;
         if (!is_null($upstream_app_name)) $fields['upstream_app_name'] = $upstream_app_name;
         if (!is_null($verification_callback)) $fields['verification_callback'] = $verification_callback;
         if (!is_null($confirmation_from)) $fields['confirmation_from'] = $confirmation_from;
 
-        return $this->_post($fields);
+        return parent::store($fields);
     }
 
     /**

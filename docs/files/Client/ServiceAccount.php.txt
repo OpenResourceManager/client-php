@@ -83,6 +83,55 @@ class ServiceAccount extends Client
     }
 
     /**
+     * Store Service Account
+     *
+     * Create or update a service account, by either it's username, identifier.
+     *
+     * @param string $identifier
+     * @param string $username
+     * @param string $name_first
+     * @param string $name_last
+     * @param boolean $should_propagate_password
+     * @param string $password
+     * @param int $account_id
+     * @param string $account_identifier
+     * @param string $account_username
+     * @param DateTime $expires_at
+     * @param boolean $disabled
+     * @return \Unirest\Response
+     */
+    public function store(
+        $identifier,
+        $username,
+        $name_first,
+        $name_last,
+        $should_propagate_password = null,
+        $password = null,
+        $account_id = null,
+        $account_identifier = null,
+        $account_username = null,
+        $expires_at = null,
+        $disabled = null
+    )
+    {
+        $fields = [];
+        //@todo validate params, throw exception when they are missing
+        $fields['identifier'] = $identifier;
+        $fields['username'] = $username;
+        $fields['name_first'] = $name_first;
+        $fields['name_last'] = $name_last;
+        if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
+        if (!is_null($password)) $fields['password'] = $password;
+        if (!is_null($account_id)) $fields['account_id'] = $account_id;
+        if (!is_null($account_identifier)) $fields['account_identifier'] = $account_identifier;
+        if (!is_null($account_username)) $fields['account_username'] = $account_username;
+        if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
+        if (!is_null($disabled)) $fields['disabled'] = $disabled;
+
+        return parent::store($fields);
+    }
+
+    /**
      * Delete Service Account
      *
      * Delete a service account by it's ID.

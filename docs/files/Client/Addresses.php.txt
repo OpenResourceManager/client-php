@@ -137,7 +137,7 @@ class Addresses extends Client
     )
     {
         $fields = [];
-
+        //@todo validate params, throw exception when they are missing
         if (!is_null($account_id)) $fields['account_id'] = $account_id;
         if (!is_null($identifier)) $fields['identifier'] = $identifier;
         if (!is_null($username)) $fields['username'] = $username;
@@ -154,7 +154,7 @@ class Addresses extends Client
         if (!is_null($latitude)) $fields['latitude'] = $latitude;
         if (!is_null($longitude)) $fields['longitude'] = $longitude;
 
-        return $this->_post($fields);
+        return parent::store($fields);
     }
 
     /**

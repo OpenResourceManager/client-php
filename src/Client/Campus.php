@@ -68,6 +68,20 @@ class Campus extends Client
     }
 
     /**
+     * Store Campus
+     *
+     * Create or update a campus, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @return \Unirest\Response
+     */
+    public function store($code, $label)
+    {
+        return parent::store([], $code, $label);
+    }
+
+    /**
      * Delete Campus
      *
      * Delete a campus by it's id.

@@ -68,6 +68,20 @@ class Country extends Client
     }
 
     /**
+     * Store Country
+     *
+     * Create or update a country, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @return \Unirest\Response
+     */
+    public function store($code, $label)
+    {
+        return parent::store([], $code, $label);
+    }
+
+    /**
      * Delete Country
      *
      * Delete a country by it's id.

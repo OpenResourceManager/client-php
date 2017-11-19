@@ -110,6 +110,20 @@ class Duty extends Client
     }
 
     /**
+     * Store Duty
+     *
+     * Create or update a duty, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @return \Unirest\Response
+     */
+    public function store($code, $label)
+    {
+        return parent::store([], $code, $label);
+    }
+
+    /**
      * Delete Duty
      *
      * Delete a duty by it's id.

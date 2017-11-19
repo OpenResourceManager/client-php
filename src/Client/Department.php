@@ -68,6 +68,25 @@ class Department extends Client
     }
 
     /**
+     * Store Department
+     *
+     * Create or update a department, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @param boolean $academic
+     * @return \Unirest\Response
+     */
+    public function store($code, $label, $academic)
+    {
+        $fields = [];
+
+        $fields['academic'] = $academic;
+
+        return parent::store($fields, $code, $label);
+    }
+
+    /**
      * Delete Department
      *
      * Delete a department by it's id.

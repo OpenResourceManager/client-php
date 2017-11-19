@@ -68,6 +68,42 @@ class Room extends Client
     }
 
     /**
+     * Store Room
+     *
+     * Create or update a room, by it's code.
+     *
+     * @param string $code
+     * @param int $room_number
+     * @param string $room_label
+     * @param int $building_id
+     * @param string $building_code
+     * @param int $floor_number
+     * @param string $floor_label
+     * @return \Unirest\Response
+     */
+    public function store(
+        $code,
+        $room_number,
+        $room_label = null,
+        $building_id = null,
+        $building_code = null,
+        $floor_number = null,
+        $floor_label = null
+    )
+    {
+        $fields = [];
+        //@todo validate params, throw exception when they are missing
+        $fields['room_number'] = $room_number;
+        if (!is_null($room_label)) $fields['room_label'] = $room_label;
+        if (!is_null($building_id)) $fields['building_id'] = $building_id;
+        if (!is_null($building_code)) $fields['building_code'] = $building_code;
+        if (!is_null($floor_number)) $fields['floor_number'] = $floor_number;
+        if (!is_null($floor_label)) $fields['floor_label'] = $floor_label;
+
+        return parent::store($fields, $code);
+    }
+
+    /**
      * Delete Room
      *
      * Delete a room by it's id.

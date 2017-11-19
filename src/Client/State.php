@@ -67,6 +67,16 @@ class State extends Client
         return parent::getFromCode($code);
     }
 
+    public function store($code, $label, $country_id = null, $country_code = null)
+    {
+        $fields = [];
+        //@todo validate params, throw exception when they are missing
+        if (!is_null($country_id)) $fields['country_id'] = $country_id;
+        if (!is_null($country_code)) $fields['country_code'] = $country_code;
+
+        return parent::store($fields, $code, $label);
+    }
+
     /**
      * Delete State
      *

@@ -329,6 +329,25 @@ class Client
     }
 
     /**
+     * Store Object
+     *
+     * Stores an object with a label and unique code
+     *
+     * @param array $fields
+     * @param string $code
+     * @param string $label
+     * @return \Unirest\Response
+     */
+    protected function store($fields = [], $code = null, $label = null)
+    {
+        //@todo validate params, throw exception when they are missing
+        if (!is_null($code)) $fields['code'] = $code;
+        if (!is_null($label)) $fields['label'] = $label;
+
+        return $this->_post($fields);
+    }
+
+    /**
      * Delete
      *
      * Delete an object by it's id.

@@ -69,6 +69,27 @@ class MobileCarrier extends Client
     }
 
     /**
+     * Store Mobile Carrier
+     *
+     * Create or update a mobile carrier, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @param int $country_id
+     * @param string $country_code
+     * @return \Unirest\Response
+     */
+    public function store($code, $label, $country_id = null, $country_code = null)
+    {
+        $fields = [];
+        //@todo validate params, throw exception when they are missing
+        if (!is_null($country_id)) $fields['country_id'] = $country_id;
+        if (!is_null($country_code)) $fields['country_code'] = $country_code;
+
+        return parent::store($fields, $code, $label);
+    }
+
+    /**
      * Delete Mobile Carrier
      *
      * Delete a mobile carrier by it's id.

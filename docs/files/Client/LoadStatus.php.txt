@@ -68,6 +68,20 @@ class LoadStatus extends Client
     }
 
     /**
+     * Store Load Status
+     *
+     * Create or update a load status, by it's code.
+     *
+     * @param string $code
+     * @param string $label
+     * @return \Unirest\Response
+     */
+    public function store($code, $label)
+    {
+        return parent::store([], $code, $label);
+    }
+
+    /**
      * Delete Load Status
      *
      * Delete a load status by it's id.

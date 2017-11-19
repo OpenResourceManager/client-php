@@ -87,7 +87,7 @@ class AliasAccount extends Client
      * @return \Unirest\Response
      */
     public function store(
-        $username = null,
+        $username,
         $should_propagate_password = null,
         $password = null,
         $account_id = null,
@@ -98,8 +98,8 @@ class AliasAccount extends Client
     )
     {
         $fields = [];
-
-        if (!is_null($username)) $fields['username'] = $username;
+        //@todo validate params, throw exception when they are missing
+        $fields['username'] = $username;
         if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
         if (!is_null($password)) $fields['password'] = $password;
         if (!is_null($account_id)) $fields['account_id'] = $account_id;
@@ -108,7 +108,7 @@ class AliasAccount extends Client
         if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
         if (!is_null($disabled)) $fields['disabled'] = $disabled;
 
-        return $this->_post($fields);
+        return parent::store($fields);
     }
 
     /**
