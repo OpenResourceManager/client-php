@@ -118,9 +118,14 @@ class Duty extends Client
      * @param string $label
      * @return \Unirest\Response
      */
-    public function store($code, $label)
+    protected function store($code, $label)
     {
-        return parent::store([], $code, $label);
+        $fields = [];
+        //@todo validate params, throw exception when they are missing
+        $fields['code'] = $code;
+        $fields['label'] = $label;
+
+        return $this->_post($fields);
     }
 
     /**

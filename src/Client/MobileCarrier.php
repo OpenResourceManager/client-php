@@ -83,10 +83,12 @@ class MobileCarrier extends Client
     {
         $fields = [];
         //@todo validate params, throw exception when they are missing
+        $fields['code'] = $code;
+        $fields['label'] = $label;
         if (!is_null($country_id)) $fields['country_id'] = $country_id;
         if (!is_null($country_code)) $fields['country_code'] = $country_code;
 
-        return parent::store($fields, $code, $label);
+        return $this->_post($fields);
     }
 
     /**

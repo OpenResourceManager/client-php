@@ -84,11 +84,13 @@ class Course extends Client
         $fields = [];
 
         //@todo validate params, throw exception when they are missing
+        $fields['code'] = $code;
+        $fields['label'] = $label;
         $fields['course_level'] = $course_level;
         if (!is_null($department_id)) $fields['department_id'] = $department_id;
         if (!is_null($department_code)) $fields['department_code'] = $department_code;
 
-        return parent::store($fields, $code, $label);
+        return $this->_post($fields);
     }
 
     /**

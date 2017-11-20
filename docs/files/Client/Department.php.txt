@@ -81,9 +81,11 @@ class Department extends Client
     {
         $fields = [];
 
+        $fields['code'] = $code;
+        $fields['label'] = $label;
         $fields['academic'] = $academic;
 
-        return parent::store($fields, $code, $label);
+        return $this->_post($fields);
     }
 
     /**

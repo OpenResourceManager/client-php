@@ -83,10 +83,12 @@ class Building extends Client
         $fields = [];
 
         //@todo validate params, throw exception when they are missing
+        $fields['code'] = $code;
+        $fields['label'] = $label;
         if (!is_null($campus_id)) $fields['campus_id'] = $campus_id;
         if (!is_null($campus_code)) $fields['campus_code'] = $campus_code;
 
-        return parent::store($fields, $code, $label);
+        return $this->_post($fields);
     }
 
     /**

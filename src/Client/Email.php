@@ -200,7 +200,7 @@ class Email extends Client
         if (!is_null($verification_callback)) $fields['verification_callback'] = $verification_callback;
         if (!is_null($confirmation_from)) $fields['confirmation_from'] = $confirmation_from;
 
-        return parent::store($fields);
+        return $this->_post($fields);
     }
 
     /**

@@ -93,6 +93,7 @@ class Room extends Client
     {
         $fields = [];
         //@todo validate params, throw exception when they are missing
+        $fields['code'] = $code;
         $fields['room_number'] = $room_number;
         if (!is_null($room_label)) $fields['room_label'] = $room_label;
         if (!is_null($building_id)) $fields['building_id'] = $building_id;
@@ -100,7 +101,7 @@ class Room extends Client
         if (!is_null($floor_number)) $fields['floor_number'] = $floor_number;
         if (!is_null($floor_label)) $fields['floor_label'] = $floor_label;
 
-        return parent::store($fields, $code);
+        return $this->_post($fields);
     }
 
     /**

@@ -179,7 +179,7 @@ class Account extends Client
         if (!is_null($disabled)) $fields['disabled'] = $disabled;
         if (!is_null($birth_date)) $fields['birth_date'] = strftime('%F', $birth_date);
 
-        return parent::store($fields);
+        return $this->_post($fields);
     }
 
     /**

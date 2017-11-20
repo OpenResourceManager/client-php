@@ -221,7 +221,7 @@ class MobilePhone extends Client
         if (!is_null($upstream_app_name)) $fields['upstream_app_name'] = $upstream_app_name;
         if (!is_null($verification_callback)) $fields['verification_callback'] = $verification_callback;
 
-        return parent::store($fields);
+        return $this->_post($fields);
     }
 
     /**

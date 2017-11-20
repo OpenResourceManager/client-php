@@ -108,7 +108,7 @@ class AliasAccount extends Client
         if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
         if (!is_null($disabled)) $fields['disabled'] = $disabled;
 
-        return parent::store($fields);
+        return $this->_post($fields);
     }
 
     /**

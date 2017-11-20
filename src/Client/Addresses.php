@@ -154,7 +154,7 @@ class Addresses extends Client
         if (!is_null($latitude)) $fields['latitude'] = $latitude;
         if (!is_null($longitude)) $fields['longitude'] = $longitude;
 
-        return parent::store($fields);
+        return $this->_post($fields);
     }
 
     /**
