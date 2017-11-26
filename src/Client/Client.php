@@ -83,6 +83,18 @@ class Client
     }
 
     /**
+     * Get ORM Connection
+     *
+     * Returns the current ORM object
+     *
+     * @return ORM
+     */
+    public function getORM()
+    {
+        return $this->orm;
+    }
+
+    /**
      * Get Page
      *
      * Returns the current page
