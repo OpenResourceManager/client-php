@@ -48,6 +48,14 @@ class ORM
      */
     public $uniBody = null;
     /**
+     * Authentication Response
+     *
+     * The response returned from the authentication request.
+     *
+     * @var null|\Unirest\Response
+     */
+    public $authResponse = null;
+    /**
      * HTTP Headers
      *
      * The HTTP headers sent with each request to the API.
@@ -133,6 +141,8 @@ class ORM
         $data = $this->uniBody->Form(['secret' => $this->secret]);
         // Send a post request to the API
         $response = $this->uniRequest->post($this->authURL, $this->headers, $data);
+        // Set the authentication response
+        $this->authResponse = $response;
         // Check that we get 20X back
         if (in_array($response->code, $this->validCodes)) {
             // Grab the jwt from the response body
