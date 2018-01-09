@@ -118,7 +118,7 @@ class Duty extends Client
      * @param string $label
      * @return \Unirest\Response
      */
-    protected function store($code, $label)
+    public function store($code, $label)
     {
         $fields = [];
         //@todo validate params, throw exception when they are missing
