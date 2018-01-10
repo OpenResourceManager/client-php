@@ -221,11 +221,10 @@ class Email extends Client
      *
      * Delete an email by supplying an address.
      *
-     * @param int $id
      * @param string $address
      * @return \Unirest\Response
      */
-    public function deleteFromAddress($id, $address)
+    public function deleteFromAddress($address)
     {
         return $this->_del(['address' => $address]);
     }
