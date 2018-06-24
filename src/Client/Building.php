@@ -74,17 +74,21 @@ class Building extends Client
      *
      * @param string $code
      * @param string $label
+     * @param float $latitude
+     * @param float $longitude
      * @param int $campus_id
      * @param string $campus_code
      * @return \Unirest\Response
      */
-    public function store($code, $label, $campus_id = null, $campus_code = null)
+    public function store($code, $label, $latitude, $longitude, $campus_id = null, $campus_code = null)
     {
         $fields = [];
 
         //@todo validate params, throw exception when they are missing
         $fields['code'] = $code;
         $fields['label'] = $label;
+        $fields['latitude'] = $latitude;
+        $fields['longitude'] = $longitude;
         if (!is_null($campus_id)) $fields['campus_id'] = $campus_id;
         if (!is_null($campus_code)) $fields['campus_code'] = $campus_code;
 
