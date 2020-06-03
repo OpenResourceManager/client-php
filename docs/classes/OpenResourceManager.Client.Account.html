@@ -24,7 +24,7 @@
     <script type="text/javascript">
     function loadExternalCodeSnippets() {
         Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-            var src = pre.getAttribute('data-src');
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
             var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
             var language = 'php';
 
@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1300774741"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1945216588"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1300774741" class="accordion-body collapse in">
+            <div id="namespace-1945216588" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1502719125"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2083232602"></a>
                                 <a href="../namespaces/OpenResourceManager.html" style="margin-left: 30px; padding-left: 0">OpenResourceManager</a>
             </div>
-            <div id="namespace-1502719125" class="accordion-body collapse ">
+            <div id="namespace-2083232602" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1243583470"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-688233313"></a>
                                 <a href="../namespaces/OpenResourceManager.Client.html" style="margin-left: 30px; padding-left: 0">Client</a>
             </div>
-            <div id="namespace-1243583470" class="accordion-body collapse ">
+            <div id="namespace-688233313" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -330,7 +330,7 @@
                         
                         
                         
-                        
+                                                
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
@@ -339,8 +339,8 @@
                                 license
                             </th>
                             <td>
-                                                                    <p>MIT</p>
-                                                                    <p><a href="https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE">https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE</a> MIT License</p>
+                                                                                                        <p>MIT</p>
+                                                                                                        <p><a href="https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE">https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE</a> MIT License</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -348,7 +348,7 @@
                                 author
                             </th>
                             <td>
-                                                                    <p>Alex Markessinis</p>
+                                                                                                        <p>Alex Markessinis</p>
                                                             </td>
                         </tr>
                                         </table>
@@ -519,7 +519,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -549,7 +549,7 @@
                 
                                     <h4>Returns</h4>
                     <a href="../classes/OpenResourceManager.ORM.html">\OpenResourceManager\ORM</a>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -579,7 +579,7 @@
                 
                                     <h4>Returns</h4>
                     integer
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -615,7 +615,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -651,7 +651,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -687,7 +687,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -717,13 +717,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -753,13 +755,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -789,13 +793,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -825,13 +831,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -861,13 +869,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -897,13 +907,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -933,13 +945,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -969,13 +983,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1005,13 +1021,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1025,7 +1043,7 @@
             <article class="method">
                 <h3 class="public ">store()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">store(string  <span class="argument">$identifier</span>, string  <span class="argument">$username</span>, string  <span class="argument">$name_prefix = null</span>, string  <span class="argument">$name_first</span>, string  <span class="argument">$name_middle = null</span>, string  <span class="argument">$name_last</span>, string  <span class="argument">$name_postifx = null</span>, string  <span class="argument">$name_phonetic = null</span>, integer  <span class="argument">$primary_duty_id = null</span>, string  <span class="argument">$primary_duty_code = null</span>, string  <span class="argument">$ssn = null</span>, boolean  <span class="argument">$should_propagate_password = null</span>, string  <span class="argument">$password = null</span>, \DateTime  <span class="argument">$expires_at = null</span>, boolean  <span class="argument">$disabled = null</span>, \DateTime  <span class="argument">$birth_date = null</span>, string  <span class="argument">$load_status_code = null</span>, integer  <span class="argument">$load_status_id = null</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">store(string  <span class="argument">$identifier</span>, string  <span class="argument">$username</span>, string  <span class="argument">$name_prefix = null</span>, string  <span class="argument">$name_first</span>, string  <span class="argument">$name_middle = null</span>, string  <span class="argument">$name_last</span>, string  <span class="argument">$name_postifx = null</span>, string  <span class="argument">$name_phonetic = null</span>, integer  <span class="argument">$primary_duty_id = null</span>, string  <span class="argument">$primary_duty_code = null</span>, boolean  <span class="argument">$should_propagate_password = null</span>, \DateTime  <span class="argument">$expires_at = null</span>, boolean  <span class="argument">$disabled = null</span>, \DateTime  <span class="argument">$birth_date = null</span>, string  <span class="argument">$load_status_code = null</span>, integer  <span class="argument">$load_status_id = null</span>) : \Unirest\Response</pre>
                 <p><em>Store Account</em></p>
                 <p>Create or update an account, by either it's username, identifier.</p>
 
@@ -1082,18 +1100,8 @@
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td>string</td>
-                                <td>$ssn </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
                                 <td>boolean</td>
                                 <td>$should_propagate_password </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>string</td>
-                                <td>$password </td>
                                 <td></td>
                             </tr>
                                                     <tr>
@@ -1126,13 +1134,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1146,7 +1156,7 @@
             <article class="method">
                 <h3 class="public ">patch()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">patch(string  <span class="argument">$identifier = null</span>, string  <span class="argument">$username = null</span>, string  <span class="argument">$name_prefix = null</span>, string  <span class="argument">$name_first = null</span>, string  <span class="argument">$name_middle = null</span>, string  <span class="argument">$name_last = null</span>, string  <span class="argument">$name_postifx = null</span>, string  <span class="argument">$name_phonetic = null</span>, integer  <span class="argument">$primary_duty_id = null</span>, string  <span class="argument">$primary_duty_code = null</span>, string  <span class="argument">$ssn = null</span>, boolean  <span class="argument">$should_propagate_password = null</span>, string  <span class="argument">$password = null</span>, \DateTime  <span class="argument">$expires_at = null</span>, boolean  <span class="argument">$disabled = null</span>, \DateTime  <span class="argument">$birth_date = null</span>, string  <span class="argument">$load_status_code = null</span>, integer  <span class="argument">$load_status_id = null</span>) : \Unirest\Response</pre>
+                <pre class="signature" style="margin-right: 54px;">patch(string  <span class="argument">$identifier = null</span>, string  <span class="argument">$username = null</span>, string  <span class="argument">$name_prefix = null</span>, string  <span class="argument">$name_first = null</span>, string  <span class="argument">$name_middle = null</span>, string  <span class="argument">$name_last = null</span>, string  <span class="argument">$name_postifx = null</span>, string  <span class="argument">$name_phonetic = null</span>, integer  <span class="argument">$primary_duty_id = null</span>, string  <span class="argument">$primary_duty_code = null</span>, boolean  <span class="argument">$should_propagate_password = null</span>, \DateTime  <span class="argument">$expires_at = null</span>, boolean  <span class="argument">$disabled = null</span>, \DateTime  <span class="argument">$birth_date = null</span>, string  <span class="argument">$load_status_code = null</span>, integer  <span class="argument">$load_status_id = null</span>) : \Unirest\Response</pre>
                 <p><em>Update Account</em></p>
                 <p>update an account, by either it's username, identifier.</p>
 
@@ -1203,18 +1213,8 @@
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td>string</td>
-                                <td>$ssn </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
                                 <td>boolean</td>
                                 <td>$should_propagate_password </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>string</td>
-                                <td>$password </td>
                                 <td></td>
                             </tr>
                                                     <tr>
@@ -1247,13 +1247,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1303,13 +1305,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1359,13 +1363,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1415,13 +1421,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1471,13 +1479,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1527,13 +1537,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1583,13 +1595,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1639,13 +1653,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1695,13 +1711,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1751,13 +1769,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1807,13 +1827,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.Account.html"><div class="path-wrapper">\OpenResourceManager\Client\Account</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1843,7 +1865,7 @@
                 
                                     <h4>Returns</h4>
                     string
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1881,7 +1903,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1929,7 +1951,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1977,7 +1999,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2025,7 +2047,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2063,7 +2085,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2101,7 +2123,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2167,7 +2189,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 24th, 2018 at 00:00.
+                    on June 3rd, 2020 at 18:04.
                 </section>
             </section>
         </section>

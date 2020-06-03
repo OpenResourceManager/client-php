@@ -127,9 +127,7 @@ class Account extends Client
      * @param string $name_phonetic
      * @param int $primary_duty_id
      * @param string $primary_duty_code
-     * @param string $ssn
      * @param boolean $should_propagate_password
-     * @param string $password
      * @param DateTime $expires_at
      * @param boolean $disabled
      * @param DateTime $birth_date
@@ -148,9 +146,7 @@ class Account extends Client
         $name_phonetic = null,
         $primary_duty_id = null,
         $primary_duty_code = null,
-        $ssn = null,
         $should_propagate_password = null,
-        $password = null,
         $expires_at = null,
         $disabled = null,
         $birth_date = null,
@@ -172,9 +168,7 @@ class Account extends Client
         if (!is_null($primary_duty_code)) $fields['primary_duty_code'] = $primary_duty_code;
         if (!is_null($load_status_id)) $fields['load_status_id'] = $load_status_id;
         if (!is_null($load_status_code)) $fields['load_status_code'] = $load_status_code;
-        if (!is_null($ssn)) $fields['ssn'] = $ssn;
         if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
-        if (!is_null($password)) $fields['password'] = $password;
         if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
         if (!is_null($disabled)) $fields['disabled'] = $disabled;
         if (!is_null($birth_date)) $fields['birth_date'] = strftime('%F', $birth_date);
@@ -197,9 +191,7 @@ class Account extends Client
      * @param string $name_phonetic
      * @param int $primary_duty_id
      * @param string $primary_duty_code
-     * @param string $ssn
      * @param boolean $should_propagate_password
-     * @param string $password
      * @param DateTime $expires_at
      * @param boolean $disabled
      * @param DateTime $birth_date
@@ -218,9 +210,7 @@ class Account extends Client
         $name_phonetic = null,
         $primary_duty_id = null,
         $primary_duty_code = null,
-        $ssn = null,
         $should_propagate_password = null,
-        $password = null,
         $expires_at = null,
         $disabled = null,
         $birth_date = null,
@@ -243,9 +233,7 @@ class Account extends Client
         if (!is_null($primary_duty_code)) $fields['primary_duty_code'] = $primary_duty_code;
         if (!is_null($load_status_id)) $fields['load_status_id'] = $load_status_id;
         if (!is_null($load_status_code)) $fields['load_status_code'] = $load_status_code;
-        if (!is_null($ssn)) $fields['ssn'] = $ssn;
         if (!is_null($should_propagate_password)) $fields['should_propagate_password'] = $should_propagate_password;
-        if (!is_null($password)) $fields['password'] = $password;
         if (!is_null($expires_at)) $fields['expires_at'] = strftime('%F %R', $expires_at);
         if (!is_null($disabled)) $fields['disabled'] = $disabled;
         if (!is_null($birth_date)) $fields['birth_date'] = strftime('%F', $birth_date);

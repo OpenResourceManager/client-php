@@ -24,7 +24,7 @@
         <script type="text/javascript">
         function loadExternalCodeSnippets() {
             Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-                var src = pre.getAttribute('data-src');
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
                 var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
                 var language = 'php';
 
@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1299469922"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-379290953"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1299469922" class="accordion-body collapse in">
+            <div id="namespace-379290953" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1323149267"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1383925077"></a>
                                 <a href="../namespaces/OpenResourceManager.html" style="margin-left: 30px; padding-left: 0">OpenResourceManager</a>
             </div>
-            <div id="namespace-1323149267" class="accordion-body collapse ">
+            <div id="namespace-1383925077" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2058701261"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-959368174"></a>
                                 <a href="../namespaces/OpenResourceManager.Client.html" style="margin-left: 30px; padding-left: 0">Client</a>
             </div>
-            <div id="namespace-2058701261" class="accordion-body collapse ">
+            <div id="namespace-959368174" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -306,7 +306,7 @@ Time: 1:07 PM</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 24th, 2018 at 00:00.
+                    on June 3rd, 2020 at 18:04.
                 </section>
             </section>
         </section>

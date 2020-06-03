@@ -24,7 +24,7 @@
     <script type="text/javascript">
     function loadExternalCodeSnippets() {
         Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-            var src = pre.getAttribute('data-src');
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
             var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
             var language = 'php';
 
@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2112865621"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1300589094"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2112865621" class="accordion-body collapse in">
+            <div id="namespace-1300589094" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1829464918"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-976544582"></a>
                                 <a href="../namespaces/OpenResourceManager.html" style="margin-left: 30px; padding-left: 0">OpenResourceManager</a>
             </div>
-            <div id="namespace-1829464918" class="accordion-body collapse ">
+            <div id="namespace-976544582" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-145832158"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-272545159"></a>
                                 <a href="../namespaces/OpenResourceManager.Client.html" style="margin-left: 30px; padding-left: 0">Client</a>
             </div>
-            <div id="namespace-145832158" class="accordion-body collapse ">
+            <div id="namespace-272545159" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -316,7 +316,7 @@
                         
                         
                         
-                        
+                                                
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
@@ -325,8 +325,8 @@
                                 license
                             </th>
                             <td>
-                                                                    <p>MIT</p>
-                                                                    <p><a href="https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE">https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE</a> MIT License</p>
+                                                                                                        <p>MIT</p>
+                                                                                                        <p><a href="https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE">https://raw.githubusercontent.com/OpenResourceManager/client-php/master/LICENSE</a> MIT License</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -334,7 +334,7 @@
                                 author
                             </th>
                             <td>
-                                                                    <p>Alex Markessinis</p>
+                                                                                                        <p>Alex Markessinis</p>
                                                             </td>
                         </tr>
                                         </table>
@@ -505,7 +505,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -535,7 +535,7 @@
                 
                                     <h4>Returns</h4>
                     <a href="../classes/OpenResourceManager.ORM.html">\OpenResourceManager\ORM</a>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -565,7 +565,7 @@
                 
                                     <h4>Returns</h4>
                     integer
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -601,7 +601,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -637,7 +637,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -673,7 +673,7 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -711,13 +711,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.ResourceVerification.html"><div class="path-wrapper">\OpenResourceManager\Client\ResourceVerification</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -747,13 +749,15 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/OpenResourceManager.Client.ResourceVerification.html"><div class="path-wrapper">\OpenResourceManager\Client\ResourceVerification</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -783,7 +787,7 @@
                 
                                     <h4>Returns</h4>
                     string
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -821,7 +825,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -869,7 +873,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -917,7 +921,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -965,7 +969,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -995,7 +999,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1033,7 +1037,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1071,7 +1075,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1109,7 +1113,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1147,7 +1151,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1185,7 +1189,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1223,7 +1227,7 @@
                 
                                     <h4>Returns</h4>
                     \Unirest\Response
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1289,7 +1293,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 24th, 2018 at 00:00.
+                    on June 3rd, 2020 at 18:04.
                 </section>
             </section>
         </section>
